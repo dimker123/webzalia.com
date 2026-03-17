@@ -468,12 +468,18 @@
 </header>
 <div id="mobile-menu">
   <a href="/nosotros/" class="mobile-link">Nosotros</a>
-  <a href="/diseno-web/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🌐 Diseño Web</a>
-  <a href="/tiendas-online/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🛍️ Tiendas Online</a>
-  <a href="/seo/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🔍 SEO</a>
-  <a href="/google-ads/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📢 Google Ads</a>
-  <a href="/facebook-ads/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📱 Meta Ads</a>
-  <a href="/sem/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📊 SEM Digital</a>
+  <button class="mobile-servicios-toggle" id="mobile-servicios-toggle" aria-expanded="false">
+    Servicios
+    <svg class="mobile-servicios-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="mobile-servicios-sub" id="mobile-servicios-sub">
+    <a href="/diseno-web/" class="mobile-link">🌐 Diseño Web</a>
+    <a href="/tiendas-online/" class="mobile-link">🛍️ Tiendas Online</a>
+    <a href="/seo/" class="mobile-link">🔍 SEO</a>
+    <a href="/google-ads/" class="mobile-link">📢 Google Ads</a>
+    <a href="/facebook-ads/" class="mobile-link">📱 Meta Ads</a>
+    <a href="/sem/" class="mobile-link">📊 SEM Digital</a>
+  </div>
   <a href="/contacto/" class="mobile-link">Contacto</a>
   <a href="/contacto/" class="btn-mobile-cta mobile-link">Presupuesto gratis</a>
 </div>
@@ -731,7 +737,7 @@
       <a href="/aviso-legal/">Aviso legal</a>
       <a href="/politica-privacidad/">Privacidad</a>
       <a href="/politica-cookies/">Cookies</a>
-    <a href="/sitemap.xml">Sitemap</a>
+    <a href="/sitemap.xml" target="_blank" rel="noopener">Sitemap</a>
     </div>
     <div class="footer-copy">&copy; 2026 Webzalia &middot; Todos los derechos reservados</div>
   </div>
@@ -765,7 +771,7 @@ window.addEventListener("scroll",function(){var b=document.getElementById("scrol
 <script>
 // HAMBURGUESA
 var mt=document.getElementById("menu-toggle"),mm=document.getElementById("mobile-menu");
-if(mt&&mm){mt.addEventListener("click",function(){var o=mm.classList.toggle("open");mt.classList.toggle("open",o);mt.setAttribute("aria-expanded",o);document.body.style.overflow=o?"hidden":"";}); mm.querySelectorAll(".mobile-link").forEach(function(l){l.addEventListener("click",function(){mm.classList.remove("open");mt.classList.remove("open");document.body.style.overflow="";})});}
+if(mt&&mm){mt.addEventListener("click",function(){var o=mm.classList.toggle("open");mt.classList.toggle("open",o);mt.setAttribute("aria-expanded",o);document.body.style.overflow=o?"hidden":"";}); mm.querySelectorAll(".mobile-link").forEach(function(l){l.addEventListener("click",function(){mm.classList.remove("open");mt.classList.remove("open");document.body.style.overflow="";})});}var mst=document.getElementById("mobile-servicios-toggle"),mss=document.getElementById("mobile-servicios-sub");if(mst&&mss){mst.addEventListener("click",function(e){e.stopPropagation();var o=mss.classList.toggle("open");mst.classList.toggle("open",o);mst.setAttribute("aria-expanded",String(o));});}
 // FORM
 var f=document.getElementById("form-google-ads");
 if(f){f.addEventListener("submit",async function(e){e.preventDefault();var b=this.querySelector(".btn-form");b.textContent="Enviando...";b.disabled=true;
