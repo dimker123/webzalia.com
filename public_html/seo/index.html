@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO y Posicionamiento Web en Google | Webzalia</title>
+<meta name="description" content="Mejora tu posicionamiento en Google con Webzalia. Estrategias SEO técnicas y de contenido para empresas de toda España. Resultados medibles y sostenibles.">
+<link rel="canonical" href="https://webzalia.com/seo/">
+<link rel="icon" type="image/png" href="/images/webzalia-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--negro:#0a0a0a;--blanco:#f5f4f0;--acento:#c8f135;--gris:#1a1a1a;--gris2:#2a2a2a;--gris3:#888;--r:4px;--t:0.3s cubic-bezier(0.25,0.46,0.45,0.94);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
+  body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--negro);color:var(--blanco);line-height:1.6;overflow-x:hidden;}
+  a{color:var(--acento);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  p{font-size:15px;color:rgba(245,244,240,0.72);line-height:1.8;margin-bottom:14px;font-weight:300;}
+  p:last-child{margin-bottom:0;}
+  strong{color:var(--blanco);font-weight:600;}
+  ul{margin:12px 0 14px 0;list-style:none;}
+  ul li{font-size:15px;color:rgba(245,244,240,0.72);line-height:1.7;margin-bottom:8px;padding-left:24px;position:relative;font-weight:300;}
+  ul li::before{content:"✓";position:absolute;left:0;color:var(--acento);font-weight:700;}
+
+  /* HEADER */
+  header{position:fixed;top:0;left:0;right:0;z-index:160;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .logo-wrap{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+  .logo-wrap img{height:36px;width:auto;display:block;}
+  nav{display:flex;align-items:center;gap:28px;}
+  nav a{font-size:14px;font-weight:500;color:var(--gris3);text-decoration:none;transition:color var(--t);}
+  nav a:hover{color:var(--blanco);}
+  .btn-nav{background:var(--acento)!important;color:var(--negro)!important;padding:10px 22px;border-radius:var(--r);font-weight:700!important;font-size:14px!important;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none!important;}
+  .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;cursor:pointer;background:none;border:none;flex-shrink:0;padding:0;z-index:200;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:#f5f4f0;border-radius:2px;transition:transform 0.3s,opacity 0.3s;}
+  .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .menu-toggle.open span:nth-child(2){opacity:0;width:0;}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  #mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#111;border-bottom:1px solid rgba(255,255,255,0.08);z-index:155;flex-direction:column;padding:12px 0 20px;box-shadow:0 16px 40px rgba(0,0,0,0.6);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{font-size:16px;font-weight:600;color:rgba(245,244,240,0.75);text-decoration:none;padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.05);}
+  #mobile-menu a:last-child{border-bottom:none;}
+  #mobile-menu .btn-mobile-cta{background:#c8f135;color:#0a0a0a!important;margin:12px 16px 0;width:calc(100% - 32px);border-radius:4px;text-align:center;font-weight:700!important;border-bottom:none!important;padding:14px 24px;}
+
+  /* HERO */
+  .hero{min-height:90vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
+  .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 70% 40%,rgba(124,58,237,0.18) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(200,241,53,0.06) 0%,transparent 60%);}
+  .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:60px 60px;}
+  .hero-inner{max-width:1200px;margin:0 auto;padding:0 40px;width:100%;position:relative;z-index:2;display:grid;grid-template-columns:1fr 420px;gap:72px;align-items:center;}
+  .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(200,241,53,0.1);border:1px solid rgba(200,241,53,0.3);color:var(--acento);font-size:12px;font-weight:600;padding:5px 14px;border-radius:100px;margin-bottom:24px;letter-spacing:0.03em;}
+  .hero-tag::before{content:"";width:6px;height:6px;background:var(--acento);border-radius:50%;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+  h1{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:clamp(36px,4.5vw,58px);line-height:1.07;letter-spacing:-2px;margin-bottom:20px;}
+  h1 .hl{color:var(--acento);}
+  .hero-desc{font-size:17px;color:rgba(245,244,240,0.7);line-height:1.75;margin-bottom:36px;font-weight:300;max-width:520px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+  .btn-primary{background:var(--acento);color:var(--negro);padding:15px 32px;border-radius:var(--r);font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform var(--t),box-shadow var(--t);white-space:nowrap;}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(200,241,53,0.35);text-decoration:none;color:var(--negro);}
+  .btn-secondary{background:transparent;color:var(--blanco);padding:15px 28px;border-radius:var(--r);font-weight:600;font-size:15px;text-decoration:none;border:1px solid rgba(255,255,255,0.18);display:inline-flex;align-items:center;gap:8px;transition:border-color var(--t),background var(--t);white-space:nowrap;}
+  .btn-secondary:hover{border-color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.05);text-decoration:none;color:var(--blanco);}
+  .hero-trust{display:flex;gap:28px;flex-wrap:wrap;}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(245,244,240,0.55);}
+  .trust-item::before{content:"✓";color:var(--acento);font-weight:700;font-size:14px;}
+
+  /* FORM */
+  .form-card{background:var(--gris);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px 28px;position:relative;overflow:hidden;flex-shrink:0;}
+  .form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--acento),#7c3aed);}
+  .form-title{font-weight:700;font-size:19px;margin-bottom:5px;color:var(--blanco);}
+  .form-subtitle{font-size:13px;color:var(--gris3);margin-bottom:24px;}
+  .form-subtitle strong{color:var(--acento);}
+  .fg{margin-bottom:14px;}
+  .fg label{display:block;font-size:12px;font-weight:600;color:var(--gris3);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.05em;}
+  .fg input,.fg select,.fg textarea{width:100%;background:var(--gris2);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r);color:var(--blanco);font-family:"Plus Jakarta Sans",sans-serif;font-size:14px;padding:11px 14px;outline:none;transition:border-color 0.3s;-webkit-appearance:none;}
+  .fg input::placeholder,.fg textarea::placeholder{color:#555;}
+  .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--acento);box-shadow:0 0 0 3px rgba(200,241,53,0.1);}
+  .fg select option{background:var(--gris2);}
+  .priv-label{display:flex!important;flex-direction:row!important;align-items:center!important;gap:10px;cursor:pointer;flex-wrap:nowrap;margin-bottom:14px;}
+  .priv-label input[type=checkbox]{position:absolute;opacity:0;width:0;height:0;}
+  .priv-check{width:18px;min-width:18px;height:18px;flex-shrink:0;border:1.5px solid rgba(255,255,255,0.2);border-radius:4px;background:var(--gris2);display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s;}
+  .priv-check svg{width:10px;height:10px;opacity:0;transition:opacity 0.15s;}
+  .priv-label input:checked+.priv-check{background:#c8f135;border-color:#c8f135;}
+  .priv-label input:checked+.priv-check svg{opacity:1;}
+  .priv-text{font-size:12px;color:rgba(245,244,240,0.6);line-height:1.4;}
+  .priv-text a{color:#c8f135;text-decoration:underline;}
+  .btn-form{width:100%;background:var(--acento);color:var(--negro);border:none;padding:15px;border-radius:var(--r);font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:transform var(--t),box-shadow var(--t);}
+  .btn-form:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,241,53,0.35);}
+  .form-trust{text-align:center;font-size:11px;color:var(--gris3);margin-top:12px;}
+  .form-trust::before{content:"🔒 ";}
+  .form-success{display:none;text-align:center;padding:20px;color:var(--acento);font-weight:600;}
+
+  /* SECTIONS */
+  .section{padding:96px 0;}
+  .section-inner{max-width:1200px;margin:0 auto;padding:0 40px;}
+  .section-alt{background:var(--gris);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
+  .section-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--acento);margin-bottom:14px;}
+  h2{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:clamp(26px,3vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:14px;}
+  h3{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:17px;margin-bottom:8px;color:var(--blanco);}
+  .section-lead{font-size:17px;color:rgba(245,244,240,0.65);max-width:620px;line-height:1.8;margin-bottom:52px;font-weight:300;}
+
+  /* PROBLEMA */
+  .problema-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .problema-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:28px 24px;}
+  .problema-icon{font-size:26px;margin-bottom:14px;}
+
+  /* BENEFICIOS */
+  .beneficios-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .beneficios-list{display:flex;flex-direction:column;gap:20px;}
+  .beneficio-item{display:flex;gap:16px;align-items:flex-start;}
+  .beneficio-num{width:36px;height:36px;flex-shrink:0;background:rgba(200,241,53,0.1);border:1px solid rgba(200,241,53,0.25);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--acento);}
+  .beneficio-texto h3{font-size:15px;margin-bottom:4px;}
+  .beneficio-texto p{font-size:13px;margin-bottom:0;}
+
+  /* PROCESO */
+  .proceso-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .paso{background:var(--gris2);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:28px 22px;position:relative;}
+  .paso-num{font-size:40px;font-weight:800;color:rgba(200,241,53,0.1);line-height:1;margin-bottom:12px;}
+  .paso h3{font-size:15px;margin-bottom:8px;}
+  .paso p{font-size:13px;margin-bottom:0;}
+
+  /* TESTIMONIOS */
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px;}
+  .test-card{background:var(--gris);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:26px;}
+  .stars{color:var(--acento);font-size:14px;letter-spacing:2px;margin-bottom:14px;}
+  .test-text{font-size:14px;color:rgba(245,244,240,0.78);line-height:1.7;margin-bottom:18px;font-style:italic;}
+  .test-author{display:flex;align-items:center;gap:12px;}
+  .test-avatar{width:38px;height:38px;border-radius:50%;background:#7c3aed;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;}
+  .test-name{font-weight:600;font-size:13px;}
+  .test-company{font-size:12px;color:var(--gris3);}
+
+  /* FAQ */
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:52px;}
+  .faq-item{background:var(--negro);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:22px 24px;cursor:pointer;transition:border-color 0.3s;}
+  .faq-item:hover{border-color:rgba(200,241,53,0.25);}
+  .faq-q{font-weight:700;font-size:14px;margin-bottom:10px;color:var(--blanco);}
+  .faq-a{font-size:14px;color:rgba(245,244,240,0.65);line-height:1.65;}
+
+  /* CTA FINAL */
+  .cta-final{padding:100px 0;text-align:center;position:relative;overflow:hidden;}
+  .cta-final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(124,58,237,0.2) 0%,transparent 70%);}
+  .cta-inner{max-width:1200px;margin:0 auto;padding:0 40px;position:relative;z-index:2;}
+  .cta-final h2{margin-bottom:16px;}
+  .cta-final p{font-size:17px;color:var(--gris3);margin-bottom:36px;font-weight:300;}
+  .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  /* FOOTER */
+  footer{border-top:1px solid rgba(255,255,255,0.06);}
+  .footer-inner{max-width:1200px;margin:0 auto;padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .footer-links{display:flex;gap:24px;}
+  .footer-links a{font-size:13px;color:var(--gris3);text-decoration:none;}
+  .footer-links a:hover{color:var(--blanco);}
+  .footer-copy{font-size:13px;color:var(--gris3);}
+
+  /* FLOTANTES */
+  .whatsapp-btn{position:fixed;bottom:23px;right:28px;width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:200;transition:transform 0.3s;}
+  .whatsapp-btn:hover{transform:scale(1.1);}
+  .whatsapp-btn svg{width:35px;height:35px;}
+  #scroll-top{position:fixed;bottom:23px;left:28px;width:48px;height:48px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:200;opacity:0;transform:translateY(20px);transition:opacity 0.3s,transform 0.3s,background 0.3s;backdrop-filter:blur(8px);}
+  #scroll-top.visible{opacity:1;transform:translateY(0);}
+  #scroll-top:hover{background:rgba(200,241,53,0.15);border-color:rgba(200,241,53,0.5);}
+  #scroll-top svg{width:18px;height:18px;}
+
+  /* COOKIE */
+  #cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#111;border-top:1px solid rgba(255,255,255,0.1);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);box-shadow:0 -4px 32px rgba(0,0,0,0.4);}
+  #cookie-banner.visible{transform:translateY(0);}
+  .cookie-text{flex:1;min-width:260px;font-size:14px;color:rgba(245,244,240,0.75);line-height:1.6;}
+  .cookie-text a{color:#c8f135;}
+  .cookie-btns{display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;}
+  .btn-cookie-accept{background:#c8f135;color:#0a0a0a;border:none;padding:11px 22px;border-radius:4px;font-weight:700;font-size:13px;cursor:pointer;}
+  .btn-cookie-reject{background:transparent;color:rgba(245,244,240,0.6);border:1px solid rgba(255,255,255,0.15);padding:11px 22px;border-radius:4px;font-weight:500;font-size:13px;cursor:pointer;}
+  .btn-cookie-settings{background:transparent;color:rgba(245,244,240,0.5);border:none;padding:11px;font-size:12px;cursor:pointer;text-decoration:underline;}
+  #cookie-modal{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;}
+  #cookie-modal.open{display:flex;}
+  .cookie-modal-box{background:#1a1a1a;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;}
+  .cookie-modal-title{font-weight:700;font-size:18px;margin-bottom:10px;color:#f5f4f0;}
+  .cookie-modal-desc{font-size:13px;color:rgba(245,244,240,0.6);margin-bottom:24px;}
+  .cookie-category{background:#222;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 18px;margin-bottom:10px;}
+  .cookie-category-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+  .cookie-category-name{font-weight:600;font-size:14px;color:#f5f4f0;}
+  .cookie-category-desc{font-size:12px;color:rgba(245,244,240,0.5);}
+  .toggle-wrap{position:relative;width:44px;height:24px;flex-shrink:0;}
+  .toggle-wrap input{opacity:0;width:0;height:0;}
+  .toggle-slider{position:absolute;inset:0;background:#333;border-radius:24px;cursor:pointer;transition:background 0.2s;}
+  .toggle-slider::before{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;background:#888;border-radius:50%;transition:transform 0.2s,background 0.2s;}
+  .toggle-wrap input:checked+.toggle-slider{background:rgba(200,241,53,0.2);border:1px solid #c8f135;}
+  .toggle-wrap input:checked+.toggle-slider::before{transform:translateX(20px);background:#c8f135;}
+  .toggle-wrap input:disabled+.toggle-slider{cursor:not-allowed;opacity:0.5;}
+  .cookie-modal-footer{display:flex;gap:10px;margin-top:20px;}
+  .btn-save-prefs{flex:1;background:#c8f135;color:#0a0a0a;border:none;padding:12px;border-radius:4px;font-weight:700;font-size:13px;cursor:pointer;}
+  .btn-accept-all-modal{flex:1;background:transparent;color:#f5f4f0;border:1px solid rgba(255,255,255,0.15);padding:12px;border-radius:4px;font-weight:500;font-size:13px;cursor:pointer;}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .header-inner{padding:0 20px;height:60px;}
+    .logo-wrap img{height:30px;}
+    .menu-toggle{display:flex;}
+    nav{display:none;}
+    .hero{padding:90px 0 60px;min-height:auto;}
+    .hero-inner{grid-template-columns:1fr;gap:40px;padding:0 20px;}
+    .section-inner{padding:0 20px;}
+    .section{padding:70px 0;}
+    .problema-grid,.test-grid{grid-template-columns:1fr;}
+    .beneficios-grid{grid-template-columns:1fr;gap:40px;}
+    .proceso-grid{grid-template-columns:1fr 1fr;}
+    .faq-grid{grid-template-columns:1fr;}
+    .footer-inner{padding:30px 20px;flex-direction:column;text-align:center;}
+    .footer-links{flex-wrap:wrap;justify-content:center;}
+    .cta-inner{padding:0 20px;}
+    #cookie-banner{padding:20px;flex-direction:column;align-items:flex-start;}
+    .cookie-btns{width:100%;}
+    .btn-cookie-accept,.btn-cookie-reject{flex:1;text-align:center;}
+    .whatsapp-btn{bottom:23px;right:16px;width:54px;height:54px;}
+    #scroll-top{bottom:23px;left:16px;width:44px;height:44px;}
+  }
+  @media(max-width:560px){
+    .proceso-grid{grid-template-columns:1fr;}
+    .hero-ctas{flex-direction:column;}
+    .btn-primary,.btn-secondary{justify-content:center;}
+    .cta-btns{flex-direction:column;align-items:stretch;}
+    .cta-btns .btn-primary,.cta-btns .btn-secondary{justify-content:center;}
+  }
+
+  /* DROPDOWN SERVICIOS */
+  .nav-dropdown {
+    position: relative;
+  }
+  .nav-drop-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gris3);
+    transition: color var(--t);
+    user-select: none;
+  }
+  .nav-drop-trigger:hover { color: var(--blanco); }
+  .nav-drop-trigger svg {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+  .nav-dropdown:hover .nav-drop-trigger svg {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+  /* Puente invisible entre trigger y menú */
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    right: -20px;
+    height: 16px;
+  }
+  .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 230px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    z-index: 300;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  }
+  .nav-dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(245,244,240,0.75) !important;
+    text-decoration: none !important;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .dropdown-menu a:hover {
+    background: rgba(200,241,53,0.08);
+    color: #f5f4f0 !important;
+  }
+  .dropdown-menu a .dd-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo-wrap"><img src="/images/webzalia-logo-blanco.webp" alt="Webzalia - Agencia de Diseño Web y Marketing Digital"></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-nav">
+      <a href="/">Inicio</a>
+      <a href="/nosotros/">Nosotros</a>
+      <div class="nav-dropdown" id="nav-servicios">
+      <span class="nav-drop-trigger">Servicios
+        <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <div class="dropdown-menu">
+        <a href="/diseno-web/"><span class="dd-icon">🌐</span>Diseño Web Profesional</a>
+        <a href="/tiendas-online/"><span class="dd-icon">🛍️</span>Tiendas Online</a>
+        <a href="/seo/"><span class="dd-icon">🔍</span>SEO y Posicionamiento</a>
+        <a href="/google-ads/"><span class="dd-icon">📢</span>Google Ads</a>
+        <a href="/facebook-ads/"><span class="dd-icon">📱</span>Facebook & Meta Ads</a>
+        <a href="/sem/"><span class="dd-icon">📊</span>SEM y Estrategia Digital</a>
+      </div>
+    </div>
+      <a href="/contacto/">Contacto</a>
+      <a href="tel:+34624129910" class="btn-nav">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 .894l.5 3a1 1 0 01-.27.919l-1 .97a8 8 0 003.486 3.486l.97-1a1 1 0 01.92-.27l3 .5a1 1 0 01.894 1V13a1 1 0 01-1 1C6.373 14 2 9.627 2 4a1 1 0 010-.04V3z" stroke="currentColor" stroke-width="1.3"/></svg>
+        624 129 910
+      </a>
+    </nav>
+  </div>
+</header>
+<div id="mobile-menu">
+  <a href="/" class="mobile-link">Inicio</a>
+  <a href="/nosotros/" class="mobile-link">Nosotros</a>
+  <a href="/#servicios" class="mobile-link">Servicios</a>
+  <a href="/diseno-web/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🌐 Diseño Web</a>
+  <a href="/tiendas-online/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🛍️ Tiendas Online</a>
+  <a href="/seo/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🔍 SEO</a>
+  <a href="/google-ads/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📢 Google Ads</a>
+  <a href="/facebook-ads/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📱 Meta Ads</a>
+  <a href="/sem/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📊 SEM Digital</a>
+  <a href="/contacto/" class="mobile-link">Contacto</a>
+  <a href="tel:+34624129910" class="btn-mobile-cta mobile-link">624 129 910</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">SEO · Posicionamiento Google · Toda España</div>
+      <h1>Aparece en Google cuando tus clientes <span class="hl">te están buscando</span></h1>
+      <p class="hero-desc">El 75% de los usuarios nunca pasa de la primera página de Google. Si no apareces ahí, tus competidores están captando a tus clientes. En Webzalia aplicamos estrategias SEO técnicas y de contenido que generan tráfico orgánico sostenible.</p>
+      <div class="hero-ctas">
+        <a href="tel:+34624129910" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 .894l.5 3a1 1 0 01-.27.919l-1 .97a8 8 0 003.486 3.486l.97-1a1 1 0 01.92-.27l3 .5a1 1 0 01.894 1V13a1 1 0 01-1 1C6.373 14 2 9.627 2 4a1 1 0 010-.04V3z" stroke="currentColor" stroke-width="1.3"/></svg>
+          Llámanos ahora
+        </a>
+        <a href="https://wa.me/34624129910?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20seo" class="btn-secondary" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M16 1C7.73 1 1 7.73 1 16c0 2.82.74 5.46 2.03 7.75L1 31l7.5-2.2A14.93 14.93 0 0016 31c8.27 0 15-6.73 15-15S24.27 1 16 1zm7.86 22.14c-.34.95-2 1.8-2.76 1.92-.7.1-1.6.14-2.57-.16-.6-.19-1.36-.43-2.34-.85-4.12-1.76-6.8-5.92-7-6.2-.2-.28-1.68-2.24-1.68-4.26 0-2.02 1.06-3.02 1.44-3.44.38-.4.82-.5 1.1-.5h.8c.26 0 .6-.1.94.72.34.84 1.16 2.86 1.26 3.06.1.2.16.44.04.7-.12.26-.2.42-.38.64-.2.22-.4.5-.58.68-.2.2-.4.4-.16.8.22.4 1 1.64 2.14 2.66 1.46 1.3 2.7 1.7 3.08 1.88.38.2.62.16.86-.1.22-.26.98-1.14 1.24-1.54.26-.4.52-.34.88-.2.36.14 2.28 1.08 2.68 1.26.4.2.66.28.76.44.1.16.1.94-.24 1.88z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="hero-trust"><div class="trust-item">Sin contratos anuales</div><div class="trust-item">Informes mensuales</div><div class="trust-item">Resultados en 3-6 meses</div></div>
+    </div>
+    <div class="form-card">
+  <div class="form-title">Presupuesto sin compromiso</div>
+  <div class="form-subtitle">Te respondemos en <strong>menos de 24h</strong></div>
+  <form id="form-seo">
+    <input type="hidden" name="access_key" value="7a0db662-ee72-42b3-a5e5-fcf614284008">
+    <input type="hidden" name="subject" value="Presupuesto SEO - Webzalia">
+    <div class="fg"><label>Nombre *</label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
+    <div class="fg"><label>Teléfono *</label><input type="tel" name="telefono" placeholder="600 000 000" required></div>
+    <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="tu@email.com" required></div>
+    <div class="fg"><label>Web actual (opcional)</label><input type="url" name="web" placeholder="https://tuweb.com"></div>
+    <label class="priv-label">
+      <input type="checkbox" name="privacidad" required>
+      <span class="priv-check"><svg viewBox="0 0 12 10" fill="none"><polyline points="1,5 4.5,8.5 11,1" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="priv-text">He leído y acepto la <a href="/politica-privacidad/" target="_blank">Política de Privacidad</a> *</span>
+    </label>
+    <button type="submit" class="btn-form">Solicitar presupuesto gratis →</button>
+    <div class="form-trust">Sin compromiso · Respuesta en 24h</div>
+  </form>
+  <div class="form-success" id="form-seo-ok">✓ ¡Recibido! Te contactamos en menos de 24h.</div>
+</div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-tag">El problema</div>
+    <h2>¿Te suena alguna de estas situaciones?</h2>
+    <p class="section-lead">Estos son los errores más comunes que encontramos cuando auditamos a nuestros nuevos clientes. Si te identificas con alguno, podemos ayudarte.</p>
+    <div class="problema-grid">
+      <div class="problema-card">
+        <div class="problema-icon">👻</div>
+        <h3>Eres invisible en Google</h3>
+        <p>Si tu web no aparece en las primeras posiciones para tus keywords principales, estás regalando clientes a la competencia cada día.</p>
+      </div>
+      <div class="problema-card">
+        <div class="problema-icon">📉</div>
+        <h3>Tráfico que no convierte</h3>
+        <p>Tener visitas no sirve de nada si no son del público adecuado. El SEO mal orientado atrae tráfico que nunca comprará.</p>
+      </div>
+      <div class="problema-card">
+        <div class="problema-icon">⏳</div>
+        <h3>Resultados que no duran</h3>
+        <p>Las técnicas de SEO agresivas consiguen subidas rápidas que luego se desmoronan con cualquier actualización de Google.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="beneficios-grid">
+      <div>
+        <div class="section-tag">Por qué Webzalia</div>
+        <h2>Lo que obtienes trabajando con nosotros</h2>
+        <p>Llevamos más de 15 años ayudando a empresas de toda España a crecer online. Cada servicio que ofrecemos está diseñado para generar un resultado medible y sostenible.</p>
+        <div style="margin-top:32px;">
+          <a href="tel:+34624129910" class="btn-primary" style="display:inline-flex;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 .894l.5 3a1 1 0 01-.27.919l-1 .97a8 8 0 003.486 3.486l.97-1a1 1 0 01.92-.27l3 .5a1 1 0 01.894 1V13a1 1 0 01-1 1C6.373 14 2 9.627 2 4a1 1 0 010-.04V3z" stroke="currentColor" stroke-width="1.3"/></svg>
+            Habla con un experto
+          </a>
+        </div>
+      </div>
+      <div class="beneficios-list">
+          <div class="beneficio-item">
+            <div class="beneficio-num">01</div>
+            <div class="beneficio-texto"><h3>Auditoría SEO completa</h3><p>Analizamos tu web al detalle: velocidad, estructura, contenido, enlaces y competencia para identificar oportunidades reales.</p></div>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-num">02</div>
+            <div class="beneficio-texto"><h3>SEO técnico y on-page</h3><p>Optimizamos velocidad de carga, estructura de URLs, datos estructurados, metaetiquetas y arquitectura de la información.</p></div>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-num">03</div>
+            <div class="beneficio-texto"><h3>Estrategia de contenidos</h3><p>Creamos contenido optimizado que responde las búsquedas de tus clientes potenciales y posiciona de forma sostenible.</p></div>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-num">04</div>
+            <div class="beneficio-texto"><h3>Link building de calidad</h3><p>Conseguimos enlaces de sitios relevantes y de autoridad que refuerzan la credibilidad de tu web ante Google.</p></div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-tag">Cómo trabajamos</div>
+    <h2>Nuestro proceso paso a paso</h2>
+    <p class="section-lead">Un proceso claro, sin sorpresas y orientado a resultados. Sabrás en todo momento en qué fase estamos y qué viene después.</p>
+    <div class="proceso-grid">
+      <div class="paso">
+        <div class="paso-num">01</div>
+        <h3>Auditoría y análisis</h3>
+        <p>Auditamos tu web, estudiamos keywords y analizamos a tu competencia para definir la estrategia.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">02</div>
+        <h3>Optimización técnica</h3>
+        <p>Corregimos todos los errores técnicos que impiden a Google posicionar tu web correctamente.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">03</div>
+        <h3>Contenido y autoridad</h3>
+        <p>Creamos contenido optimizado y trabajamos la autoridad de dominio con link building de calidad.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">04</div>
+        <h3>Seguimiento y mejora</h3>
+        <p>Monitorizamos posiciones, tráfico y conversiones con informes mensuales detallados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">Casos de éxito</div>
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <div class="test-text">"En 4 meses pasamos de la página 3 a la primera posición para nuestras keywords principales. El tráfico se triplicó."</div>
+        <div class="test-author">
+          <div class="test-avatar">JL</div>
+          <div><div class="test-name">Jorge L.</div><div class="test-company">CEO · Piscinas Norpol</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <div class="test-text">"Webzalia detectó errores técnicos que ninguna otra agencia había visto. En 6 meses las consultas orgánicas se duplicaron."</div>
+        <div class="test-author">
+          <div class="test-avatar">MR</div>
+          <div><div class="test-name">María R.</div><div class="test-company">Directora · Littleschool</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <div class="test-text">"Los informes mensuales son muy claros. Vemos exactamente qué keywords suben y qué retorno estamos obteniendo."</div>
+        <div class="test-author">
+          <div class="test-avatar">DT</div>
+          <div><div class="test-name">David T.</div><div class="test-company">Propietario · Fontanería Barcelona</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-tag">Preguntas frecuentes</div>
+    <h2>Resolvemos tus dudas</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">¿Cuánto tiempo tardan en verse resultados con SEO?</div>
+        <div class="faq-a">Los primeros resultados suelen verse entre los 3 y 6 meses. El SEO es una inversión a largo plazo que genera tráfico sostenible.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Garantizáis la primera posición en Google?</div>
+        <div class="faq-a">Ninguna agencia puede garantizar posiciones exactas porque el algoritmo de Google cambia. Sí garantizamos mejoras medibles y sostenibles.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cuánto cuesta el SEO mensual?</div>
+        <div class="faq-a">Depende de la competitividad del sector y el alcance del proyecto. Nuestros planes empiezan desde 350€/mes. Pídenos presupuesto.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Trabajáis el SEO local?</div>
+        <div class="faq-a">Sí. Optimizamos Google My Business, citas locales y contenido geolocalizad para negocios que quieren posicionar en ciudades concretas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Qué incluyen los informes mensuales?</div>
+        <div class="faq-a">Evolución de posiciones, tráfico orgánico, páginas más visitadas, keywords trabajadas y comparativa con el mes anterior.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Necesito cambiar mi web para hacer SEO?</div>
+        <div class="faq-a">No siempre. Auditamos lo que tienes y decidimos si es más eficiente optimizar la web actual o reconstruir partes concretas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-inner">
+    <div class="section-tag">¿Listo para empezar?</div>
+    <h2>Consigue más clientes desde Google</h2>
+    <p>Pídenos una auditoría SEO gratuita y descubre por qué tu competencia te está superando.</p>
+    <div class="cta-btns">
+      <a href="tel:+34624129910" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 .894l.5 3a1 1 0 01-.27.919l-1 .97a8 8 0 003.486 3.486l.97-1a1 1 0 01.92-.27l3 .5a1 1 0 01.894 1V13a1 1 0 01-1 1C6.373 14 2 9.627 2 4a1 1 0 010-.04V3z" stroke="currentColor" stroke-width="1.3"/></svg>
+        Llámanos gratis
+      </a>
+      <a href="https://wa.me/34624129910?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20seo" class="btn-secondary" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M16 1C7.73 1 1 7.73 1 16c0 2.82.74 5.46 2.03 7.75L1 31l7.5-2.2A14.93 14.93 0 0016 31c8.27 0 15-6.73 15-15S24.27 1 16 1zm7.86 22.14c-.34.95-2 1.8-2.76 1.92-.7.1-1.6.14-2.57-.16-.6-.19-1.36-.43-2.34-.85-4.12-1.76-6.8-5.92-7-6.2-.2-.28-1.68-2.24-1.68-4.26 0-2.02 1.06-3.02 1.44-3.44.38-.4.82-.5 1.1-.5h.8c.26 0 .6-.1.94.72.34.84 1.16 2.86 1.26 3.06.1.2.16.44.04.7-.12.26-.2.42-.38.64-.2.22-.4.5-.58.68-.2.2-.4.4-.16.8.22.4 1 1.64 2.14 2.66 1.46 1.3 2.7 1.7 3.08 1.88.38.2.62.16.86-.1.22-.26.98-1.14 1.24-1.54.26-.4.52-.34.88-.2.36.14 2.28 1.08 2.68 1.26.4.2.66.28.76.44.1.16.1.94-.24 1.88z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="logo-wrap"><img src="/images/webzalia-logo-blanco.webp" alt="Webzalia" style="height:28px;width:auto;display:block;"></a>
+    <div class="footer-links">
+      <a href="/aviso-legal/">Aviso legal</a>
+      <a href="/politica-privacidad/">Privacidad</a>
+      <a href="/politica-cookies/">Cookies</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Webzalia &middot; Todos los derechos reservados</div>
+  </div>
+</footer>
+<a href="https://wa.me/34624129910?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20web" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16 1C7.73 1 1 7.73 1 16c0 2.82.74 5.46 2.03 7.75L1 31l7.5-2.2A14.93 14.93 0 0016 31c8.27 0 15-6.73 15-15S24.27 1 16 1zm7.86 22.14c-.34.95-2 1.8-2.76 1.92-.7.1-1.6.14-2.57-.16-.6-.19-1.36-.43-2.34-.85-4.12-1.76-6.8-5.92-7-6.2-.2-.28-1.68-2.24-1.68-4.26 0-2.02 1.06-3.02 1.44-3.44.38-.4.82-.5 1.1-.5h.8c.26 0 .6-.1.94.72.34.84 1.16 2.86 1.26 3.06.1.2.16.44.04.7-.12.26-.2.42-.38.64-.2.22-.4.5-.58.68-.2.2-.4.4-.16.8.22.4 1 1.64 2.14 2.66 1.46 1.3 2.7 1.7 3.08 1.88.38.2.62.16.86-.1.22-.26.98-1.14 1.24-1.54.26-.4.52-.34.88-.2.36.14 2.28 1.08 2.68 1.26.4.2.66.28.76.44.1.16.1.94-.24 1.88z"/></svg>
+</a>
+<button id="scroll-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#c8f135" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <div class="cookie-text"><strong>Usamos cookies</strong> — Más info en nuestra <a href="/politica-cookies/">Política de Cookies</a>.</div>
+  <div class="cookie-btns">
+    <button class="btn-cookie-settings" onclick="openCookieModal()">Configurar</button>
+    <button class="btn-cookie-reject" onclick="rejectCookies()">Rechazar</button>
+    <button class="btn-cookie-accept" onclick="acceptAllCookies()">Aceptar todas</button>
+  </div>
+</div>
+<div id="cookie-modal" role="dialog" aria-modal="true">
+  <div class="cookie-modal-box">
+    <div class="cookie-modal-title">Configuración de cookies</div>
+    <div class="cookie-modal-desc">Selecciona qué tipos de cookies deseas permitir.</div>
+    <div class="cookie-category"><div class="cookie-category-header"><div class="cookie-category-name">Cookies técnicas</div><label class="toggle-wrap"><input type="checkbox" id="c-tecnicas" checked disabled><span class="toggle-slider"></span></label></div><div class="cookie-category-desc">Necesarias, no se pueden desactivar.</div></div>
+    <div class="cookie-category"><div class="cookie-category-header"><div class="cookie-category-name">Cookies analíticas</div><label class="toggle-wrap"><input type="checkbox" id="c-analiticas"><span class="toggle-slider"></span></label></div><div class="cookie-category-desc">Google Analytics, información anónima.</div></div>
+    <div class="cookie-modal-footer"><button class="btn-save-prefs" onclick="savePreferences()">Guardar preferencias</button><button class="btn-accept-all-modal" onclick="acceptAllCookies()">Aceptar todas</button></div>
+  </div>
+</div>
+<script>
+window.addEventListener("scroll",function(){var b=document.getElementById("scroll-top");if(!b)return;b.classList.toggle("visible",window.scrollY>400);});
+</script>
+<script>
+// HAMBURGUESA
+var mt=document.getElementById("menu-toggle"),mm=document.getElementById("mobile-menu");
+if(mt&&mm){mt.addEventListener("click",function(){var o=mm.classList.toggle("open");mt.classList.toggle("open",o);mt.setAttribute("aria-expanded",o);document.body.style.overflow=o?"hidden":"";}); mm.querySelectorAll(".mobile-link").forEach(function(l){l.addEventListener("click",function(){mm.classList.remove("open");mt.classList.remove("open");document.body.style.overflow="";})});}
+// FORM
+var f=document.getElementById("form-seo");
+if(f){f.addEventListener("submit",async function(e){e.preventDefault();var b=this.querySelector(".btn-form");b.textContent="Enviando...";b.disabled=true;
+try{var r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(this)))});var d=await r.json();
+if(d.success){this.style.display="none";document.getElementById("form-seo-ok").style.display="block";}
+else{b.textContent="Error — inténtalo de nuevo";b.disabled=false;}}catch(err){b.textContent="Error — inténtalo de nuevo";b.disabled=false;}})};
+</script>
+<script>
+(function(){var c=localStorage.getItem("cookie_consent");if(!c){setTimeout(function(){var b=document.getElementById("cookie-banner");if(b)b.classList.add("visible");},800);}else{applyConsent(JSON.parse(c));}})();
+function hideBanner(){var b=document.getElementById("cookie-banner");if(b){b.style.transform="translateY(100%)";setTimeout(function(){b.style.display="none";},400);}}
+function acceptAllCookies(){var p={tecnicas:true,analiticas:true,date:new Date().toISOString()};localStorage.setItem("cookie_consent",JSON.stringify(p));applyConsent(p);hideBanner();closeCookieModal();}
+function rejectCookies(){var p={tecnicas:true,analiticas:false,date:new Date().toISOString()};localStorage.setItem("cookie_consent",JSON.stringify(p));applyConsent(p);hideBanner();}
+function savePreferences(){var p={tecnicas:true,analiticas:document.getElementById("c-analiticas").checked,date:new Date().toISOString()};localStorage.setItem("cookie_consent",JSON.stringify(p));applyConsent(p);hideBanner();closeCookieModal();}
+function applyConsent(p){}
+function openCookieModal(){var m=document.getElementById("cookie-modal");if(m)m.classList.add("open");var s=localStorage.getItem("cookie_consent");if(s){var p=JSON.parse(s);document.getElementById("c-analiticas").checked=p.analiticas;}}
+function closeCookieModal(){var m=document.getElementById("cookie-modal");if(m)m.classList.remove("open");}
+document.addEventListener("DOMContentLoaded",function(){var m=document.getElementById("cookie-modal");if(m)m.addEventListener("click",function(e){if(e.target===this)closeCookieModal();});});
+</script>
+</body>
+</html>

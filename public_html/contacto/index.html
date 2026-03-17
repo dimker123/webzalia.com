@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Agencia de Diseño Web y Marketing Digital | Webzalia</title>
+<meta name="description" content="Contacta con Webzalia, tu agencia de diseño web y marketing digital. Llámanos, escríbenos por WhatsApp o rellena el formulario. Respondemos en menos de 24h.">
+<link rel="icon" type="image/png" href="/images/webzalia-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--negro:#0a0a0a;--blanco:#f5f4f0;--acento:#c8f135;--gris:#1a1a1a;--gris2:#2a2a2a;--gris3:#888;--radio:4px;--t:0.3s cubic-bezier(0.25,0.46,0.45,0.94);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
+  body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:var(--blanco);line-height:1.6;overflow-x:hidden;}
+  header{position:fixed;top:0;left:0;right:0;z-index:160;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .logo-wrap{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+  .logo-wrap img{height:36px;width:auto;display:block;}
+  nav{display:flex;align-items:center;gap:28px;}
+  nav a{font-size:14px;font-weight:500;color:var(--gris3);text-decoration:none;transition:color var(--t);}
+  nav a:hover{color:var(--blanco);}
+  .btn-nav{background:var(--acento);color:var(--negro)!important;padding:10px 22px;border-radius:4px;font-weight:700!important;font-size:14px!important;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;}
+  .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;cursor:pointer;background:none;border:none;flex-shrink:0;padding:0;z-index:200;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:#f5f4f0;border-radius:2px;transition:transform 0.3s,opacity 0.3s;}
+  .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .menu-toggle.open span:nth-child(2){opacity:0;width:0;}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  #mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#111;border-bottom:1px solid rgba(255,255,255,0.08);z-index:155;flex-direction:column;align-items:flex-start;gap:0;box-shadow:0 16px 40px rgba(0,0,0,0.6);padding:12px 0 20px;}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{font-size:16px;font-weight:600;color:rgba(245,244,240,0.75);text-decoration:none;padding:14px 24px;width:100%;border-bottom:1px solid rgba(255,255,255,0.05);}
+  #mobile-menu a:last-child{border-bottom:none;}
+  #mobile-menu a:hover{color:#f5f4f0;background:rgba(255,255,255,0.04);}
+  #mobile-menu .btn-mobile-cta{background:#c8f135;color:#0a0a0a!important;padding:14px 24px;margin:12px 16px 0;width:calc(100% - 32px);border-radius:4px;text-align:center;font-weight:700!important;border-bottom:none!important;}
+
+  /* HERO */
+  .page-hero{padding:140px 0 80px;background:var(--gris);border-bottom:1px solid rgba(255,255,255,0.06);position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(124,58,237,0.12) 0%,transparent 70%);}
+  .page-hero-inner{max-width:1200px;margin:0 auto;padding:0 40px;position:relative;z-index:2;}
+  .section-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--acento);margin-bottom:16px;}
+  h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(36px,4vw,54px);letter-spacing:-1.5px;line-height:1.1;margin-bottom:20px;max-width:700px;}
+  .hero-lead{font-size:17px;color:rgba(245,244,240,0.7);line-height:1.8;font-weight:300;max-width:560px;}
+
+  /* SECCIONES */
+  .section{padding:100px 0;}
+  .section-inner{max-width:1200px;margin:0 auto;padding:0 40px;}
+  .section-alt{background:var(--gris);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);}
+  h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(28px,3vw,40px);letter-spacing:-1px;line-height:1.15;margin-bottom:16px;}
+  h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:17px;margin-bottom:8px;}
+  p{font-size:15px;color:rgba(245,244,240,0.72);line-height:1.8;margin-bottom:14px;font-weight:300;}
+  p:last-child{margin-bottom:0;}
+  a{color:var(--acento);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* CONTACTO GRID */
+  .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:flex-start;}
+
+  /* INFO */
+  .info-block{margin-bottom:32px;}
+  .info-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px;}
+  .info-icon{width:48px;height:48px;background:rgba(200,241,53,0.08);border:1px solid rgba(200,241,53,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;}
+  .info-text strong{display:block;font-size:15px;font-weight:700;color:var(--blanco);margin-bottom:4px;}
+  .info-text span,.info-text a{font-size:14px;color:rgba(245,244,240,0.65);display:block;text-decoration:none;}
+  .info-text a:hover{color:var(--acento);}
+
+  /* HORARIO */
+  .horario-grid{background:var(--gris2);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:24px;margin-bottom:28px;}
+  .horario-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px;}
+  .horario-row:last-child{border-bottom:none;padding-bottom:0;}
+  .horario-dia{color:rgba(245,244,240,0.6);}
+  .horario-hora{color:var(--blanco);font-weight:600;}
+  .horario-hora.cerrado{color:var(--gris3);font-weight:400;}
+
+  /* RRSS */
+  .rrss-wrap{display:flex;gap:12px;margin-bottom:32px;}
+  .rrss-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.12);color:var(--blanco);transition:border-color 0.3s,background 0.3s;}
+  .rrss-btn:hover{border-color:rgba(200,241,53,0.4);background:rgba(200,241,53,0.05);text-decoration:none;color:var(--blanco);}
+  .rrss-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  /* CTA BTNS */
+  .contacto-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;}
+  .btn-call{display:inline-flex;align-items:center;gap:8px;background:var(--acento);color:var(--negro);padding:14px 28px;border-radius:4px;font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;}
+  .btn-call:hover{text-decoration:none;color:var(--negro);}
+  .btn-wa{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--blanco);padding:14px 28px;border-radius:4px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid rgba(255,255,255,0.2);white-space:nowrap;}
+  .btn-wa:hover{border-color:rgba(255,255,255,0.4);text-decoration:none;color:var(--blanco);}
+
+  /* FORMULARIO */
+  .form-card{background:var(--gris);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:36px 32px;position:relative;overflow:hidden;}
+  .form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--acento),#7c3aed);}
+  .form-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:20px;margin-bottom:6px;color:var(--blanco);}
+  .form-subtitle{font-size:13px;color:var(--gris3);margin-bottom:28px;}
+  .form-subtitle strong{color:var(--acento);}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-size:13px;font-weight:600;color:var(--gris3);margin-bottom:6px;}
+  .form-group input,.form-group select,.form-group textarea{width:100%;background:var(--gris2);border:1px solid rgba(255,255,255,0.08);border-radius:4px;color:var(--blanco);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;padding:12px 16px;outline:none;transition:border-color 0.3s;-webkit-appearance:none;}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:#555;}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--acento);box-shadow:0 0 0 3px rgba(200,241,53,0.1);}
+  .form-group textarea{resize:vertical;min-height:110px;}
+  .form-group select option{background:var(--gris2);}
+  .privacy-label-c{display:flex!important;flex-direction:row!important;align-items:center!important;gap:10px;cursor:pointer;flex-wrap:nowrap;margin-bottom:16px;}
+  .privacy-label-c input[type="checkbox"]{position:absolute;opacity:0;width:0;height:0;}
+  .custom-check-c{width:18px;min-width:18px;height:18px;flex-shrink:0;border:1.5px solid rgba(255,255,255,0.25);border-radius:4px;background:var(--gris2);display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s;}
+  .custom-check-c svg{width:10px;height:10px;opacity:0;transition:opacity 0.15s;}
+  .privacy-label-c input:checked+.custom-check-c{background:#c8f135;border-color:#c8f135;}
+  .privacy-label-c input:checked+.custom-check-c svg{opacity:1;}
+  .privacy-text-c{font-size:13px;color:rgba(245,244,240,0.7);font-weight:400;line-height:1.4;}
+  .privacy-text-c a{color:#c8f135;text-decoration:underline;}
+  .btn-form{width:100%;background:var(--acento);color:var(--negro);border:none;padding:16px;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;}
+  .btn-form:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,241,53,0.35);}
+  .form-trust{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;font-size:12px;color:var(--gris3);}
+  .form-trust::before{content:'🔒';font-size:12px;}
+  #contacto-success{display:none;text-align:center;padding:24px;color:var(--acento);font-weight:600;font-size:16px;}
+
+  /* MAPA */
+  .mapa-section{padding:0;}
+  .mapa-wrap{width:100%;height:420px;overflow:hidden;border-top:1px solid rgba(255,255,255,0.06);}
+  .mapa-wrap iframe{width:100%;height:100%;border:0;filter:grayscale(1) invert(1) brightness(0.85) contrast(0.9);}
+
+  /* FOOTER */
+  footer{border-top:1px solid rgba(255,255,255,0.06);}
+  .footer-inner{max-width:1200px;margin:0 auto;padding:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .footer-links{display:flex;gap:24px;}
+  .footer-links a{font-size:13px;color:var(--gris3);text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--blanco);}
+  .footer-copy{font-size:13px;color:var(--gris3);}
+
+  /* FLOTANTES */
+  .whatsapp-btn{position:fixed;bottom:23px;right:28px;width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:200;transition:transform 0.3s;}
+  .whatsapp-btn:hover{transform:scale(1.1);}
+  .whatsapp-btn svg{width:35px;height:35px;}
+  #scroll-top{position:fixed;bottom:23px;left:28px;width:48px;height:48px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:200;opacity:0;transform:translateY(20px);transition:opacity 0.3s,transform 0.3s,background 0.3s;backdrop-filter:blur(8px);}
+  #scroll-top.visible{opacity:1;transform:translateY(0);}
+  #scroll-top:hover{background:rgba(200,241,53,0.15);border-color:rgba(200,241,53,0.5);}
+  #scroll-top svg{width:18px;height:18px;}
+
+  /* COOKIE */
+  #cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#111;border-top:1px solid rgba(255,255,255,0.1);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);box-shadow:0 -4px 32px rgba(0,0,0,0.4);}
+  #cookie-banner.visible{transform:translateY(0);}
+  .cookie-text{flex:1;min-width:260px;font-size:14px;color:rgba(245,244,240,0.75);line-height:1.6;}
+  .cookie-text strong{color:#f5f4f0;font-weight:500;}
+  .cookie-text a{color:#c8f135;text-decoration:none;}
+  .cookie-btns{display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;}
+  .btn-cookie-accept{background:#c8f135;color:#0a0a0a;border:none;padding:12px 24px;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;}
+  .btn-cookie-reject{background:transparent;color:rgba(245,244,240,0.6);border:1px solid rgba(255,255,255,0.15);padding:12px 24px;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;font-size:14px;cursor:pointer;white-space:nowrap;}
+  .btn-cookie-settings{background:transparent;color:rgba(245,244,240,0.5);border:none;padding:12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;cursor:pointer;text-decoration:underline;white-space:nowrap;}
+  #cookie-modal{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;}
+  #cookie-modal.open{display:flex;}
+  .cookie-modal-box{background:#1a1a1a;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:36px;max-width:540px;width:100%;max-height:90vh;overflow-y:auto;}
+  .cookie-modal-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:20px;margin-bottom:12px;color:#f5f4f0;}
+  .cookie-modal-desc{font-size:14px;color:rgba(245,244,240,0.65);line-height:1.6;margin-bottom:28px;}
+  .cookie-category{background:#222;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:18px 20px;margin-bottom:12px;}
+  .cookie-category-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+  .cookie-category-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:15px;color:#f5f4f0;}
+  .cookie-category-desc{font-size:13px;color:rgba(245,244,240,0.55);line-height:1.5;}
+  .toggle-wrap{position:relative;width:44px;height:24px;flex-shrink:0;}
+  .toggle-wrap input{opacity:0;width:0;height:0;}
+  .toggle-slider{position:absolute;inset:0;background:#333;border-radius:24px;cursor:pointer;transition:background 0.2s;}
+  .toggle-slider::before{content:'';position:absolute;width:18px;height:18px;left:3px;top:3px;background:#888;border-radius:50%;transition:transform 0.2s,background 0.2s;}
+  .toggle-wrap input:checked+.toggle-slider{background:rgba(200,241,53,0.2);border:1px solid #c8f135;}
+  .toggle-wrap input:checked+.toggle-slider::before{transform:translateX(20px);background:#c8f135;}
+  .toggle-wrap input:disabled+.toggle-slider{cursor:not-allowed;opacity:0.5;}
+  .cookie-modal-footer{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
+  .btn-save-prefs{flex:1;background:#c8f135;color:#0a0a0a;border:none;padding:13px 20px;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;cursor:pointer;}
+  .btn-accept-all-modal{flex:1;background:transparent;color:#f5f4f0;border:1px solid rgba(255,255,255,0.15);padding:13px 20px;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;font-size:14px;cursor:pointer;}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .header-inner{padding:0 20px;height:60px;}
+    .logo-wrap img{height:30px;}
+    .menu-toggle{display:flex;}
+    nav{display:none;}
+    .page-hero{padding:100px 0 60px;}
+    .page-hero-inner,.section-inner{padding:0 20px;}
+    .contacto-grid{grid-template-columns:1fr;gap:48px;}
+    .section{padding:70px 0;}
+    .footer-inner{padding:30px 20px;flex-direction:column;text-align:center;}
+    .footer-links{flex-wrap:wrap;justify-content:center;}
+    .mapa-wrap{height:300px;}
+    #cookie-banner{padding:20px;flex-direction:column;align-items:flex-start;}
+    .cookie-btns{width:100%;}
+    .btn-cookie-accept,.btn-cookie-reject{flex:1;text-align:center;}
+    .cookie-modal-box{padding:24px;}
+    .whatsapp-btn{bottom:23px;right:16px;width:54px;height:54px;}
+    #scroll-top{bottom:23px;left:16px;width:44px;height:44px;}
+    .form-card{padding:24px 20px;}
+    .contacto-btns{flex-direction:column;}
+    .btn-call,.btn-wa{justify-content:center;}
+    .rrss-wrap{flex-wrap:wrap;}
+  }
+
+  /* DROPDOWN SERVICIOS */
+  .nav-dropdown {
+    position: relative;
+  }
+  .nav-drop-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gris3);
+    transition: color var(--t);
+    user-select: none;
+  }
+  .nav-drop-trigger:hover { color: var(--blanco); }
+  .nav-drop-trigger svg {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+  .nav-dropdown:hover .nav-drop-trigger svg {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+  /* Puente invisible entre trigger y menú */
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    right: -20px;
+    height: 16px;
+  }
+  .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 230px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    z-index: 300;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  }
+  .nav-dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(245,244,240,0.75) !important;
+    text-decoration: none !important;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .dropdown-menu a:hover {
+    background: rgba(200,241,53,0.08);
+    color: #f5f4f0 !important;
+  }
+  .dropdown-menu a .dd-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo-wrap"><img src="/images/webzalia-logo-blanco.webp" alt="Webzalia - Agencia de Diseño Web y Marketing Digital"></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-nav">
+      <a href="/">Inicio</a>
+      <a href="/nosotros/">Nosotros</a>
+      <div class="nav-dropdown" id="nav-servicios">
+      <span class="nav-drop-trigger">Servicios
+        <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <div class="dropdown-menu">
+        <a href="/diseno-web/"><span class="dd-icon">🌐</span>Diseño Web Profesional</a>
+        <a href="/tiendas-online/"><span class="dd-icon">🛍️</span>Tiendas Online</a>
+        <a href="/seo/"><span class="dd-icon">🔍</span>SEO y Posicionamiento</a>
+        <a href="/google-ads/"><span class="dd-icon">📢</span>Google Ads</a>
+        <a href="/facebook-ads/"><span class="dd-icon">📱</span>Facebook & Meta Ads</a>
+        <a href="/sem/"><span class="dd-icon">📊</span>SEM y Estrategia Digital</a>
+      </div>
+    </div>
+      <a href="/contacto/">Contacto</a>
+      <a href="tel:+34624129910" class="btn-nav">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 .894l.5 3a1 1 0 01-.27.919l-1 .97a8 8 0 003.486 3.486l.97-1a1 1 0 01.92-.27l3 .5a1 1 0 01.894 1V13a1 1 0 01-1 1C6.373 14 2 9.627 2 4a1 1 0 010-.04V3z" stroke="currentColor" stroke-width="1.3"/></svg>
+        624 129 910
+      </a>
+    </nav>
+  </div>
+</header>
+
+<div id="mobile-menu">
+  <a href="/" class="mobile-link">Inicio</a>
+  <a href="/nosotros/" class="mobile-link">Nosotros</a>
+  <a href="/#servicios" class="mobile-link">Servicios</a>
+  <a href="/diseno-web/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🌐 Diseño Web</a>
+  <a href="/tiendas-online/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🛍️ Tiendas Online</a>
+  <a href="/seo/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🔍 SEO</a>
+  <a href="/google-ads/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📢 Google Ads</a>
+  <a href="/facebook-ads/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📱 Meta Ads</a>
+  <a href="/sem/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📊 SEM Digital</a>
+  <a href="/contacto/" class="mobile-link">Contacto</a>
+  <a href="tel:+34624129910" class="btn-mobile-cta mobile-link">624 129 910</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-tag">Contacto</div>
+    <h1>Hablemos de tu proyecto</h1>
+    <p class="hero-lead">Estamos aquí para ayudarte. Cuéntanos lo que necesitas y te damos una respuesta en menos de 24 horas, sin compromiso y sin letra pequeña.</p>
+  </div>
+</section>
+
+<!-- CONTACTO PRINCIPAL -->
+<section class="section">
+  <div class="section-inner">
+    <div class="contacto-grid">
+
+      <!-- INFO -->
+      <div>
+        <div class="section-tag">Información de contacto</div>
+        <h2>Ponte en contacto con nosotros</h2>
+        <p style="margin-bottom:32px;">Puedes contactarnos por teléfono, WhatsApp, email o rellenando el formulario. Elegimos estar siempre disponibles para nuestros clientes.</p>
+
+        <div class="info-block">
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div class="info-text">
+              <strong>Teléfono</strong>
+              <a href="tel:+34624129910">624 129 910</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div class="info-text">
+              <strong>Email</strong>
+              <a href="/cdn-cgi/l/email-protection#751c1b131a350210170f14191c145b161a18"><span class="__cf_email__" data-cfemail="87eee9e1e8c7f0e2e5fde6ebeee6a9e4e8ea">[email&#160;protected]</span></a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div class="info-text">
+              <strong>Dirección</strong>
+              <span>Carrer de Francesc Pérez Dolç, 38</span>
+              <span>43850, Cambrils (Tarragona)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-tag" style="margin-bottom:16px;">Horario de atención</div>
+        <div class="horario-grid">
+          <div class="horario-row"><span class="horario-dia">Lunes — Viernes</span><span class="horario-hora">9:00 — 18:00</span></div>
+          <div class="horario-row"><span class="horario-dia">Sábado</span><span class="horario-hora">10:00 — 14:00</span></div>
+          <div class="horario-row"><span class="horario-dia">Domingo</span><span class="horario-hora cerrado">Cerrado</span></div>
+        </div>
+
+        <div class="section-tag" style="margin-bottom:16px;">Síguenos</div>
+        <div class="rrss-wrap">
+          <a href="https://www.facebook.com/webzalia" target="_blank" rel="noopener" class="rrss-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.instagram.com/webzalia_agency/" target="_blank" rel="noopener" class="rrss-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+          </a>
+        </div>
+
+        <div class="contacto-btns">
+          <a href="tel:+34624129910" class="btn-call">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 .894l.5 3a1 1 0 01-.27.919l-1 .97a8 8 0 003.486 3.486l.97-1a1 1 0 01.92-.27l3 .5a1 1 0 01.894 1V13a1 1 0 01-1 1C6.373 14 2 9.627 2 4a1 1 0 010-.04V3z" stroke="currentColor" stroke-width="1.3"/></svg>
+            Llámanos ahora
+          </a>
+          <a href="https://wa.me/34624129910?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20web" class="btn-wa" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M16 1C7.73 1 1 7.73 1 16c0 2.82.74 5.46 2.03 7.75L1 31l7.5-2.2A14.93 14.93 0 0016 31c8.27 0 15-6.73 15-15S24.27 1 16 1zm7.86 22.14c-.34.95-2 1.8-2.76 1.92-.7.1-1.6.14-2.57-.16-.6-.19-1.36-.43-2.34-.85-4.12-1.76-6.8-5.92-7-6.2-.2-.28-1.68-2.24-1.68-4.26 0-2.02 1.06-3.02 1.44-3.44.38-.4.82-.5 1.1-.5h.8c.26 0 .6-.1.94.72.34.84 1.16 2.86 1.26 3.06.1.2.16.44.04.7-.12.26-.2.42-.38.64-.2.22-.4.5-.58.68-.2.2-.4.4-.16.8.22.4 1 1.64 2.14 2.66 1.46 1.3 2.7 1.7 3.08 1.88.38.2.62.16.86-.1.22-.26.98-1.14 1.24-1.54.26-.4.52-.34.88-.2.36.14 2.28 1.08 2.68 1.26.4.2.66.28.76.44.1.16.1.94-.24 1.88z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- FORMULARIO -->
+      <div class="form-card">
+        <div class="form-title">Solicita tu presupuesto</div>
+        <div class="form-subtitle">Respuesta en <strong>menos de 24h</strong> · Sin compromiso</div>
+        <form id="contacto-form">
+          <input type="hidden" name="access_key" value="7a0db662-ee72-42b3-a5e5-fcf614284008">
+          <input type="hidden" name="subject" value="Nuevo contacto desde página Contacto - Webzalia">
+          <div class="form-group"><label>Nombre *</label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
+          <div class="form-group"><label>Teléfono *</label><input type="tel" name="telefono" placeholder="600 000 000" required></div>
+          <div class="form-group"><label>Email *</label><input type="email" name="email" placeholder="tu@email.com" required></div>
+          <div class="form-group">
+            <label>Servicio de interés *</label>
+            <select name="servicio" required>
+              <option value="">Selecciona un servicio</option>
+              <option value="web">Página web profesional</option>
+              <option value="tienda">Tienda online</option>
+              <option value="seo">SEO / Posicionamiento</option>
+              <option value="google-ads">Google Ads</option>
+              <option value="facebook-ads">Facebook / Meta Ads</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Mensaje</label><textarea name="mensaje" placeholder="Cuéntanos tu proyecto..."></textarea></div>
+          <label class="privacy-label-c">
+            <input type="checkbox" name="privacidad" required>
+            <span class="custom-check-c"><svg viewBox="0 0 12 10" fill="none"><polyline points="1,5 4.5,8.5 11,1" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="privacy-text-c">He leído y acepto la <a href="/politica-privacidad/" target="_blank">Política de Privacidad</a> *</span>
+          </label>
+          <button type="submit" class="btn-form">Enviar mensaje →</button>
+          <div class="form-trust">Tus datos están protegidos. No hacemos spam.</div>
+        </form>
+        <div id="contacto-success">✓ ¡Mensaje recibido! Te contactamos en menos de 24h.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<div class="mapa-wrap">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.1234567890!2d1.0597!3d41.0677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a155b5a1234567%3A0x1234567890abcdef!2sCarrer%20de%20Francesc%20P%C3%A9rez%20Dol%C3%A7%2C%2038%2C%2043850%20Cambrils%2C%20Tarragona!5e0!3m2!1ses!2ses!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Webzalia - Cambrils, Tarragona"></iframe>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="logo-wrap"><img src="/images/webzalia-logo-blanco.webp" alt="Webzalia" style="height:28px;width:auto;display:block;"></a>
+    <div class="footer-links">
+      <a href="/aviso-legal/">Aviso legal</a>
+      <a href="/politica-privacidad/">Privacidad</a>
+      <a href="/politica-cookies/">Cookies</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Webzalia &middot; Todos los derechos reservados</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/34624129910?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20mi%20web" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16 1C7.73 1 1 7.73 1 16c0 2.82.74 5.46 2.03 7.75L1 31l7.5-2.2A14.93 14.93 0 0016 31c8.27 0 15-6.73 15-15S24.27 1 16 1zm7.86 22.14c-.34.95-2 1.8-2.76 1.92-.7.1-1.6.14-2.57-.16-.6-.19-1.36-.43-2.34-.85-4.12-1.76-6.8-5.92-7-6.2-.2-.28-1.68-2.24-1.68-4.26 0-2.02 1.06-3.02 1.44-3.44.38-.4.82-.5 1.1-.5h.8c.26 0 .6-.1.94.72.34.84 1.16 2.86 1.26 3.06.1.2.16.44.04.7-.12.26-.2.42-.38.64-.2.22-.4.5-.58.68-.2.2-.4.4-.16.8.22.4 1 1.64 2.14 2.66 1.46 1.3 2.7 1.7 3.08 1.88.38.2.62.16.86-.1.22-.26.98-1.14 1.24-1.54.26-.4.52-.34.88-.2.36.14 2.28 1.08 2.68 1.26.4.2.66.28.76.44.1.16.1.94-.24 1.88z"/></svg>
+</a>
+<button id="scroll-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#c8f135" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <div class="cookie-text"><strong>Usamos cookies</strong> — utilizamos cookies propias y de terceros para analizar el uso del sitio y mejorar tu experiencia. Más info en nuestra <a href="/politica-cookies/">Política de Cookies</a>.</div>
+  <div class="cookie-btns">
+    <button class="btn-cookie-settings" onclick="openCookieModal()">Configurar</button>
+    <button class="btn-cookie-reject" onclick="rejectCookies()">Rechazar</button>
+    <button class="btn-cookie-accept" onclick="acceptAllCookies()">Aceptar todas</button>
+  </div>
+</div>
+<div id="cookie-modal" role="dialog" aria-modal="true">
+  <div class="cookie-modal-box">
+    <div class="cookie-modal-title">Configuración de cookies</div>
+    <div class="cookie-modal-desc">Selecciona qué tipos de cookies deseas permitir. Más info en <a href="/politica-cookies/" style="color:#c8f135">Política de Cookies</a>.</div>
+    <div class="cookie-category">
+      <div class="cookie-category-header"><div class="cookie-category-name">Cookies técnicas (necesarias)</div><label class="toggle-wrap"><input type="checkbox" id="c-tecnicas" checked disabled><span class="toggle-slider"></span></label></div>
+      <div class="cookie-category-desc">Imprescindibles para el funcionamiento del sitio. No pueden desactivarse.</div>
+    </div>
+    <div class="cookie-category">
+      <div class="cookie-category-header"><div class="cookie-category-name">Cookies analíticas</div><label class="toggle-wrap"><input type="checkbox" id="c-analiticas"><span class="toggle-slider"></span></label></div>
+      <div class="cookie-category-desc">Google Analytics. Información anónima y agregada sobre el uso del sitio.</div>
+    </div>
+    <div class="cookie-modal-footer">
+      <button class="btn-save-prefs" onclick="savePreferences()">Guardar preferencias</button>
+      <button class="btn-accept-all-modal" onclick="acceptAllCookies()">Aceptar todas</button>
+    </div>
+  </div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+window.addEventListener('scroll',function(){var b=document.getElementById('scroll-top');if(!b)return;b.classList.toggle('visible',window.scrollY>400);});
+</script>
+
+<script>
+// MENÚ HAMBURGUESA
+var menuToggle = document.getElementById('menu-toggle');
+var mobileMenu = document.getElementById('mobile-menu');
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener('click', function() {
+    var isOpen = mobileMenu.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('.mobile-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      menuToggle.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+// FORMULARIO
+var cForm = document.getElementById('contacto-form');
+if (cForm) {
+  cForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = this.querySelector('.btn-form');
+    btn.textContent = 'Enviando...'; btn.disabled = true;
+    try {
+      var res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(this)))
+      });
+      var data = await res.json();
+      if (data.success) { this.style.display='none'; document.getElementById('contacto-success').style.display='block'; }
+      else { btn.textContent='Error — inténtalo de nuevo'; btn.disabled=false; }
+    } catch(err) { btn.textContent='Error — inténtalo de nuevo'; btn.disabled=false; }
+  });
+}
+</script>
+
+<script>
+(function(){var c=localStorage.getItem('cookie_consent');if(!c){setTimeout(function(){var b=document.getElementById('cookie-banner');if(b)b.classList.add('visible');},800);}else{applyConsent(JSON.parse(c));}})();
+function hideBanner(){var b=document.getElementById('cookie-banner');if(b){b.style.transform='translateY(100%)';setTimeout(function(){b.style.display='none';},400);}}
+function acceptAllCookies(){var p={tecnicas:true,analiticas:true,date:new Date().toISOString()};localStorage.setItem('cookie_consent',JSON.stringify(p));applyConsent(p);hideBanner();closeCookieModal();}
+function rejectCookies(){var p={tecnicas:true,analiticas:false,date:new Date().toISOString()};localStorage.setItem('cookie_consent',JSON.stringify(p));applyConsent(p);hideBanner();}
+function savePreferences(){var p={tecnicas:true,analiticas:document.getElementById('c-analiticas').checked,date:new Date().toISOString()};localStorage.setItem('cookie_consent',JSON.stringify(p));applyConsent(p);hideBanner();closeCookieModal();}
+function applyConsent(p){}
+function openCookieModal(){var m=document.getElementById('cookie-modal');if(m)m.classList.add('open');var s=localStorage.getItem('cookie_consent');if(s){var p=JSON.parse(s);document.getElementById('c-analiticas').checked=p.analiticas;}}
+function closeCookieModal(){var m=document.getElementById('cookie-modal');if(m)m.clas
