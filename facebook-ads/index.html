@@ -434,6 +434,16 @@
   ]
 }
 </script>
+<style>
+.mobile-servicios-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:600;color:rgba(245,244,240,0.75);background:none;border:none;border-bottom:1px solid rgba(255,255,255,0.05);padding:14px 24px;cursor:pointer;text-align:left;transition:color 0.2s,background 0.2s;box-sizing:border-box;-webkit-appearance:none;appearance:none;}
+.mobile-servicios-toggle:hover,.mobile-servicios-toggle:focus{color:#f5f4f0;background:rgba(255,255,255,0.04);outline:none;}
+.mobile-servicios-toggle.open{color:#c8f135;}
+.mobile-servicios-chevron{transition:transform 0.25s ease;flex-shrink:0;}
+.mobile-servicios-toggle.open .mobile-servicios-chevron{transform:rotate(180deg);}
+.mobile-servicios-sub{display:none;width:100%;}
+.mobile-servicios-sub.open{display:block;}
+.mobile-servicios-sub .mobile-link{padding-left:36px!important;font-size:14px!important;opacity:0.8;}
+</style>
 </head>
 <body>
 
