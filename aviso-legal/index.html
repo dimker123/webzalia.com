@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--negro:#0a0a0a;--blanco:#f5f4f0;--acento:#c8f135;--gris:#1a1a1a;--gris2:#2a2a2a;--gris3:#888;--radio:4px;}
+  :root{--negro:#0a0a0a;--blanco:#f5f4f0;--acento:#c8f135;--gris:#1a1a1a;--gris2:#2a2a2a;--gris3:#888;--radio:4px;--transicion:0.3s cubic-bezier(0.25,0.46,0.45,0.94);}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;overflow-x:hidden;}
   body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--negro);color:var(--blanco);line-height:1.6;overflow-x:hidden;}
@@ -91,6 +91,7 @@
   @media(max-width:768px){
     .header-inner{padding:0 16px;height:60px;}
     .logo-wrap img{height:30px;}
+    .menu-toggle{display:flex;}nav{display:none;}
     .legal-hero{padding:100px 0 40px;}
     .legal-hero-inner,.legal-inner{padding:0 20px;}
     .footer-inner{padding:30px 20px;flex-direction:column;text-align:center;}
@@ -115,7 +116,7 @@
     font-size: 14px;
     font-weight: 500;
     color: var(--gris3);
-    transition: color var(--t);
+    transition: color var(--transicion);
     user-select: none;
   }
   .nav-drop-trigger:hover { color: var(--blanco); }
@@ -185,15 +186,73 @@
     text-align: center;
     flex-shrink: 0;
   }
+  /* NAV DESKTOP */
+  nav{display:flex;align-items:center;gap:32px;}
+  nav a{font-size:14px;font-weight:500;color:var(--gris3);text-decoration:none;transition:color var(--transicion);white-space:nowrap;}
+  nav a:hover{color:var(--blanco);}
+  /* HAMBURGUESA */
+  .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;cursor:pointer;background:none;border:none;flex-shrink:0;padding:0;z-index:200;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:#f5f4f0;border-radius:2px;transition:transform 0.3s ease,opacity 0.3s ease,width 0.3s ease;}
+  .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .menu-toggle.open span:nth-child(2){opacity:0;width:0;}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  /* MENÚ MÓVIL */
+  #mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#111;border-bottom:1px solid rgba(255,255,255,0.08);z-index:155;flex-direction:column;align-items:flex-start;gap:0;box-shadow:0 16px 40px rgba(0,0,0,0.6);padding:12px 0 20px;}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:600;color:rgba(245,244,240,0.75);text-decoration:none;padding:14px 24px;width:100%;transition:color 0.2s,background 0.2s;border-bottom:1px solid rgba(255,255,255,0.05);}
+  #mobile-menu a:last-child{border-bottom:none;}
+  #mobile-menu a:hover{color:#f5f4f0;background:rgba(255,255,255,0.04);}
+  #mobile-menu .btn-mobile-cta{background:#c8f135;color:#0a0a0a!important;padding:14px 24px;margin:12px 16px 0;width:calc(100% - 32px);border-radius:4px;text-align:center;font-size:15px!important;font-weight:700!important;border-bottom:none!important;}
+  #mobile-menu .btn-mobile-cta:hover{background:#d4f545;color:#0a0a0a!important;}
 </style>
 </head>
 <body>
 <header>
-  <div class="header-inner">
-    <a href="/" class="logo-wrap"><img src="/images/webzalia-logo-blanco.webp" alt="Webzalia"></a>
-    <a href="/nosotros/" style="font-size:14px;font-weight:500;color:rgba(245,244,240,0.7);text-decoration:none;margin-right:20px;">Nosotros</a><a href="/contacto/" style="font-size:14px;font-weight:500;color:rgba(245,244,240,0.7);text-decoration:none;margin-right:20px;">Contacto</a><a href="tel:+34624129910" class="btn-nav"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 .894l.5 3a1 1 0 01-.27.919l-1 .97a8 8 0 003.486 3.486l.97-1a1 1 0 01.92-.27l3 .5a1 1 0 01.894 1V13a1 1 0 01-1 1C6.373 14 2 9.627 2 4a1 1 0 010-.04V3z" stroke="currentColor" stroke-width="1.3"/></svg>624 129 910Presupuesto gratis</a>
-  </div>
+<div class="header-inner">
+  <a href="/" class="logo-wrap"><img src="/images/webzalia-logo-blanco.webp" alt="Webzalia"></a>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="main-nav">
+    <div class="nav-dropdown" id="nav-servicios">
+      <span class="nav-drop-trigger">Servicios
+        <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <div class="dropdown-menu">
+        <a href="/diseno-web/"><span class="dd-icon">🌐</span>Diseño Web Profesional</a>
+        <a href="/tiendas-online/"><span class="dd-icon">🛍️</span>Tiendas Online</a>
+        <a href="/seo/"><span class="dd-icon">🔍</span>SEO y Posicionamiento</a>
+        <a href="/google-ads/"><span class="dd-icon">📢</span>Google Ads</a>
+        <a href="/facebook-ads/"><span class="dd-icon">📱</span>Facebook & Meta Ads</a>
+        <a href="/sem/"><span class="dd-icon">📊</span>SEM y Estrategia Digital</a>
+      </div>
+    </div>
+    <a href="/nosotros/">Nosotros</a>
+    <a href="/#testimonios">Clientes</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/contacto/">Contacto</a>
+    <a href="tel:+34624129910" class="btn-nav">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 .894l.5 3a1 1 0 01-.27.919l-1 .97a8 8 0 003.486 3.486l.97-1a1 1 0 01.92-.27l3 .5a1 1 0 01.894 1V13a1 1 0 01-1 1C6.373 14 2 9.627 2 4a1 1 0 010-.04V3z" stroke="currentColor" stroke-width="1.3"/></svg>
+      624 129 910
+    </a>
+  </nav>
+</div>
 </header>
+<!-- MENÚ MÓVIL -->
+<div id="mobile-menu">
+  <a href="/#servicios" class="mobile-link">Servicios</a>
+  <a href="/diseno-web/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🌐 Diseño Web</a>
+  <a href="/tiendas-online/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🛍️ Tiendas Online</a>
+  <a href="/seo/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">🔍 SEO</a>
+  <a href="/google-ads/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📢 Google Ads</a>
+  <a href="/facebook-ads/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📱 Meta Ads</a>
+  <a href="/sem/" class="mobile-link" style="padding-left:36px;font-size:14px;opacity:0.8;">📊 SEM Digital</a>
+  <a href="/nosotros/" class="mobile-link">Nosotros</a>
+  <a href="/#testimonios" class="mobile-link">Clientes</a>
+  <a href="/#faq" class="mobile-link">FAQ</a>
+  <a href="/contacto/" class="mobile-link">Contacto</a>
+  <a href="/contacto/" class="btn-mobile-cta mobile-link">Presupuesto gratis</a>
+</div>
 <section class="legal-hero">
   <div class="legal-hero-inner">
     <div class="section-tag">Legal</div>
@@ -278,4 +337,10 @@ function rejectCookies(){var p={tecnicas:true,analiticas:false,date:new Date().t
 function savePreferences(){var p={tecnicas:true,analiticas:document.getElementById('c-analiticas').checked,date:new Date().toISOString()};localStorage.setItem('cookie_consent',JSON.stringify(p));applyConsent(p);hideBanner();closeCookieModal();}
 function applyConsent(p){}
 function openCookieModal(){var m=document.getElementById('cookie-modal');if(m)m.classList.add('open');var s=localStorage.getItem('cookie_consent');if(s){var p=JSON.parse(s);document.getElementById('c-analiticas').checked=p.analiticas;}}
-function closeCookieModal(){var m=document.getElementById('cookie-modal');if(m)m.clas
+function closeCookieModal(){var m=document.getElementById('cookie-modal');if(m)m.classList.remove('open');}
+document.addEventListener('DOMContentLoaded',function(){var m=document.getElementById('cookie-modal');if(m)m.addEventListener('click',function(e){if(e.target===this)closeCookieModal();});});
+var menuToggle=document.getElementById('menu-toggle');var mobileMenu=document.getElementById('mobile-menu');
+if(menuToggle&&mobileMenu){menuToggle.addEventListener('click',function(){var isOpen=mobileMenu.classList.toggle('open');menuToggle.classList.toggle('open',isOpen);menuToggle.setAttribute('aria-expanded',isOpen);document.body.style.overflow=isOpen?'hidden':'';});mobileMenu.querySelectorAll('.mobile-link').forEach(function(link){link.addEventListener('click',function(){mobileMenu.classList.remove('open');menuToggle.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');document.body.style.overflow='';});});}
+</script>
+</body>
+</html>
