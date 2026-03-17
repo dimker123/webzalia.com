@@ -675,6 +675,7 @@ if (menuToggle && mobileMenu) {
     });
   });
 }
+var mst=document.getElementById("mobile-servicios-toggle"),mss=document.getElementById("mobile-servicios-sub");if(mst&&mss){mst.addEventListener("click",function(e){e.stopPropagation();var o=mss.classList.toggle("open");mst.classList.toggle("open",o);mst.setAttribute("aria-expanded",String(o));});}
 
 // CONTADORES
 function animateCounter2(el) {
