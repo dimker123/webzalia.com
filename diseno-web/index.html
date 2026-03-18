@@ -144,6 +144,17 @@
   .test-name{font-weight:600;font-size:13px;}
   .test-company{font-size:12px;color:var(--gris3);}
 
+  /* PORTFOLIO */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;}
+  .portfolio-card{background:var(--gris);border:1px solid rgba(255,255,255,0.07);border-radius:12px;overflow:hidden;transition:transform var(--t),border-color var(--t),box-shadow var(--t);}
+  .portfolio-card:hover{transform:translateY(-5px);border-color:rgba(200,241,53,0.3);box-shadow:0 16px 40px rgba(0,0,0,0.4);}
+  .portfolio-img{width:100%;height:180px;object-fit:cover;object-position:top;display:block;background:var(--gris2);}
+  .portfolio-body{padding:18px 20px 20px;}
+  .portfolio-name{font-weight:700;font-size:15px;color:var(--blanco);margin-bottom:4px;}
+  .portfolio-desc{font-size:12px;color:var(--acento);font-style:italic;margin-bottom:14px;}
+  .portfolio-btn{display:inline-flex;align-items:center;gap:6px;background:var(--acento);color:var(--negro);padding:8px 18px;border-radius:var(--r);font-size:13px;font-weight:700;text-decoration:none;transition:transform var(--t),box-shadow var(--t);}
+  .portfolio-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,241,53,0.35);text-decoration:none;color:var(--negro);}
+
   /* FAQ */
   .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:52px;}
   .faq-item{background:var(--negro);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:22px 24px;cursor:pointer;transition:border-color 0.3s;}
@@ -218,6 +229,7 @@
     .problema-grid,.test-grid{grid-template-columns:1fr;}
     .beneficios-grid{grid-template-columns:1fr;gap:40px;}
     .proceso-grid{grid-template-columns:1fr 1fr;}
+    .portfolio-grid{grid-template-columns:1fr 1fr;}
     .faq-grid{grid-template-columns:1fr;}
     .footer-inner{padding:30px 20px;flex-direction:column;text-align:center;}
     .footer-links{flex-wrap:wrap;justify-content:center;}
@@ -229,6 +241,7 @@
     #scroll-top{bottom:23px;left:16px;width:44px;height:44px;}
   }
   @media(max-width:560px){
+    .portfolio-grid{grid-template-columns:1fr;}
     .proceso-grid{grid-template-columns:1fr;}
     .hero-ctas{flex-direction:column;}
     .btn-primary,.btn-secondary{justify-content:center;}
@@ -662,6 +675,126 @@
           <div><div class="test-name">Marta F.</div><div class="test-company">Gerente · Reformas Marta</div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section section-alt" id="portfolio">
+  <div class="section-inner">
+    <div class="section-tag">Nuestro trabajo</div>
+    <h2>Proyectos de diseño web realizados</h2>
+    <p class="section-lead">Algunos de los proyectos que hemos desarrollado para empresas de distintos sectores. Cada web diseñada a medida, optimizada para convertir y posicionada en Google.</p>
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://puertasautomaticasensevilla.com/" alt="Web de Automatismos Sevilla" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Automatismos Sevilla</div>
+          <div class="portfolio-desc">— Empresa de puertas automáticas —</div>
+          <a href="https://puertasautomaticasensevilla.com/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://hidesignst.com/" alt="Web de HI Design Studio" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">HI Design Studio</div>
+          <div class="portfolio-desc">— Estudio de interiorismo —</div>
+          <a href="https://hidesignst.com/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://mundorecreativos.com/" alt="Web de Mundo Recreativos" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Mundo Recreativos</div>
+          <div class="portfolio-desc">— Máquinas recreativas —</div>
+          <a href="https://mundorecreativos.com/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://starmagicstore.com/" alt="Web de Star Magic Store" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Star Magic Store</div>
+          <div class="portfolio-desc">— Tienda de figuras de coleccionismo —</div>
+          <a href="https://starmagicstore.com/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://windcambrils.com/" alt="Web de Windcambrils" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Windcambrils</div>
+          <div class="portfolio-desc">— Escuela de vela Windcambrils —</div>
+          <a href="https://windcambrils.com/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://rideavan.es/" alt="Web de Ride a Van" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Ride a Van</div>
+          <div class="portfolio-desc">— Alquiler de furgonetas camper —</div>
+          <a href="https://rideavan.es/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://littleschool.es/" alt="Web de Littleschool" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Littleschool</div>
+          <div class="portfolio-desc">— Academia de Inglés en Almería —</div>
+          <a href="https://littleschool.es/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://factoriadelglamour.es/" alt="Web de Factoría del Glamour" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Factoría del Glamour</div>
+          <div class="portfolio-desc">— Tienda de ropa de alta costura —</div>
+          <a href="https://factoriadelglamour.es/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://grupevasion.com/" alt="Web de Grupevasion" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Grupevasion</div>
+          <div class="portfolio-desc">— Viajes y excursiones escolares —</div>
+          <a href="https://grupevasion.com/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://piscinasnorpol.com/" alt="Web de Piscinas Norpol" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Piscinas Norpol</div>
+          <div class="portfolio-desc">— Instalación de piscinas de fibra —</div>
+          <a href="https://piscinasnorpol.com/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://sevillasistemas.com/" alt="Web de Sevilla Sistemas" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Sevilla Sistemas</div>
+          <div class="portfolio-desc">— Sistemas de seguridad y teleco —</div>
+          <a href="https://sevillasistemas.com/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img class="portfolio-img" src="https://image.thum.io/get/width/600/crop/380/https://www.tecnocasa.es/" alt="Web de Tecnocasa" loading="lazy">
+        <div class="portfolio-body">
+          <div class="portfolio-name">Tecnocasa</div>
+          <div class="portfolio-desc">— Agencia inmobiliaria —</div>
+          <a href="https://www.tecnocasa.es/" class="portfolio-btn" target="_blank" rel="noopener">Ver web →</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
