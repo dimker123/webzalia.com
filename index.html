@@ -1256,6 +1256,16 @@
   .servicio-link:hover { gap: 8px; text-decoration: none; }
   .servicio-card.destacado .servicio-link { color: rgba(255,255,255,0.9); }
 
+  .servicio-card.full-width {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .servicio-card.full-width .servicio-icon { flex-shrink: 0; }
+  .servicio-card.full-width .servicio-contenido { flex: 1; }
+  .servicio-card.full-width .servicio-link { flex-shrink: 0; white-space: nowrap; }
+
   /* DROPDOWN SERVICIOS */
   .nav-dropdown {
     position: relative;
@@ -1669,10 +1679,12 @@
         <div class="servicio-desc">Estrategia SEM integral para que tu inversión en publicidad online sea siempre rentable y medible.</div>
         <a href="/sem/" class="servicio-link">Ver más →</a>
       </div>
-      <div class="servicio-card">
+      <div class="servicio-card full-width">
         <div class="servicio-icon">🧠</div>
-        <div class="servicio-titulo">Neuromarketing Servicios</div>
-        <div class="servicio-desc">Web premium GRATIS + Google Ads gestionados. Leads directos a tu WhatsApp por 150€/mes. Sin permanencia.</div>
+        <div class="servicio-contenido">
+          <div class="servicio-titulo">Neuromarketing Servicios</div>
+          <div class="servicio-desc">Web premium GRATIS + Google Ads gestionados. Leads directos a tu WhatsApp por 150€/mes. Sin permanencia.</div>
+        </div>
         <a href="/neuromarketing/" class="servicio-link">Ver más →</a>
       </div>
     </div>
