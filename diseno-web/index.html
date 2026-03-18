@@ -533,7 +533,6 @@
   <div class="form-title">Presupuesto sin compromiso</div>
   <div class="form-subtitle">Te respondemos en <strong>menos de 24h</strong></div>
   <form id="form-diseno-web">
-    <input type="hidden" name="access_key" value="7a0db662-ee72-42b3-a5e5-fcf614284008">
     <input type="hidden" name="subject" value="Presupuesto Diseño Web - Webzalia">
     <div class="fg"><label>Nombre *</label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
     <div class="fg"><label>Teléfono *</label><input type="tel" name="telefono" placeholder="600 000 000" required></div>
@@ -919,7 +918,7 @@ if(mt&&mm){mt.addEventListener("click",function(){var o=mm.classList.toggle("ope
 // FORM
 var f=document.getElementById("form-diseno-web");
 if(f){f.addEventListener("submit",async function(e){e.preventDefault();var b=this.querySelector(".btn-form");b.textContent="Enviando...";b.disabled=true;
-try{var r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(this)))});var d=await r.json();
+try{var r=await fetch("/form-handler.php",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(this)))});var d=await r.json();
 if(d.success){this.style.display="none";document.getElementById("form-diseno-web-ok").style.display="block";}
 else{b.textContent="Error — inténtalo de nuevo";b.disabled=false;}}catch(err){b.textContent="Error — inténtalo de nuevo";b.disabled=false;}})};
 </script>
