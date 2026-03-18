@@ -1565,7 +1565,6 @@
       <div class="form-title">Solicita tu presupuesto</div>
       <div class="form-subtitle">Respuesta en <strong>menos de 24h</strong> · Sin compromiso</div>
       <form id="contact-form">
-        <input type="hidden" name="access_key" value="7a0db662-ee72-42b3-a5e5-fcf614284008">
         <input type="hidden" name="subject" value="Nuevo presupuesto desde Webzalia Landing">
         <div class="form-group">
           <label>Nombre *</label>
@@ -1821,7 +1820,6 @@
         <div class="form-title">Solicita tu presupuesto</div>
         <div class="form-subtitle">Respuesta en <strong>menos de 24h</strong> · Sin compromiso</div>
         <form id="contact-form-2">
-          <input type="hidden" name="access_key" value="7a0db662-ee72-42b3-a5e5-fcf614284008">
           <input type="hidden" name="subject" value="Nuevo presupuesto desde Webzalia Landing (CTA final)">
           <div class="form-group">
             <label>Nombre *</label>
@@ -1946,7 +1944,7 @@
     const json = JSON.stringify(object);
 
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/form-handler.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: json
@@ -2012,7 +2010,7 @@
       var formData = new FormData(this);
       var object = Object.fromEntries(formData);
       try {
-        var res = await fetch('https://api.web3forms.com/submit', {
+        var res = await fetch('/form-handler.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(object)

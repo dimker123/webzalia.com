@@ -472,7 +472,6 @@
         <div class="form-title">Solicita tu presupuesto</div>
         <div class="form-subtitle">Respuesta en <strong>menos de 24h</strong> · Sin compromiso</div>
         <form id="contacto-form">
-          <input type="hidden" name="access_key" value="7a0db662-ee72-42b3-a5e5-fcf614284008">
           <input type="hidden" name="subject" value="Nuevo contacto desde página Contacto - Webzalia">
           <div class="form-group"><label>Nombre *</label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
           <div class="form-group"><label>Teléfono *</label><input type="tel" name="telefono" placeholder="600 000 000" required></div>
@@ -587,7 +586,7 @@ if (cForm) {
     var btn = this.querySelector('.btn-form');
     btn.textContent = 'Enviando...'; btn.disabled = true;
     try {
-      var res = await fetch('https://api.web3forms.com/submit', {
+      var res = await fetch('/form-handler.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(Object.fromEntries(new FormData(this)))
