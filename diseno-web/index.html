@@ -146,9 +146,10 @@
 
   /* PORTFOLIO */
   .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;}
-  .portfolio-card{background:var(--gris);border:1px solid rgba(255,255,255,0.07);border-radius:12px;overflow:hidden;transition:transform var(--t),border-color var(--t),box-shadow var(--t);}
+  .portfolio-card{background:var(--gris);border:1px solid rgba(255,255,255,0.07);border-radius:12px;overflow:hidden;transition:transform var(--t),border-color var(--t),box-shadow var(--t);display:flex;flex-direction:column;}
   .portfolio-card:hover{transform:translateY(-5px);border-color:rgba(200,241,53,0.3);box-shadow:0 16px 40px rgba(0,0,0,0.4);}
-  .portfolio-img{width:100%;height:auto;display:block;}
+  .portfolio-img-wrap{aspect-ratio:600/274;overflow:hidden;flex-shrink:0;}
+  .portfolio-img{width:100%;height:100%;object-fit:cover;display:block;}
   .portfolio-body{padding:18px 20px 20px;}
   .portfolio-name{font-weight:700;font-size:15px;color:var(--blanco);margin-bottom:4px;}
   .portfolio-desc{font-size:12px;color:var(--acento);font-style:italic;margin-bottom:14px;}
@@ -688,7 +689,7 @@
     <div class="portfolio-grid">
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/Automatismos-Sevilla-600x274.webp" alt="Web de Automatismos Sevilla" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/Automatismos-Sevilla-600x274.webp" alt="Web de Automatismos Sevilla" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Automatismos Sevilla</div>
           <div class="portfolio-desc">— Empresa de puertas automáticas —</div>
@@ -697,7 +698,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/hidesignst.com_-480x219.webp" alt="Web de HI Design Studio" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/hidesignst.com_-480x219.webp" alt="Web de HI Design Studio" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">HI Design Studio</div>
           <div class="portfolio-desc">— Estudio de interiorismo —</div>
@@ -706,7 +707,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/mundorecreativos.com_-480x219.webp" alt="Web de Mundo Recreativos" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/mundorecreativos.com_-480x219.webp" alt="Web de Mundo Recreativos" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Mundo Recreativos</div>
           <div class="portfolio-desc">— Máquinas recreativas —</div>
@@ -715,7 +716,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/star-magic-store-30-600x274.webp" alt="Web de Star Magic Store" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/star-magic-store-30-600x274.webp" alt="Web de Star Magic Store" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Star Magic Store</div>
           <div class="portfolio-desc">— Tienda de figuras de coleccionismo —</div>
@@ -724,7 +725,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="https://image.thum.io/get/width/600/noanimate/https://windcambrils.com/" alt="Web de Windcambrils" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="https://image.thum.io/get/width/600/noanimate/https://windcambrils.com/" alt="Web de Windcambrils" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Windcambrils</div>
           <div class="portfolio-desc">— Escuela de vela Windcambrils —</div>
@@ -733,7 +734,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/ride-a-van-10-600x274.webp" alt="Web de Ride a Van" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/ride-a-van-10-600x274.webp" alt="Web de Ride a Van" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Ride a Van</div>
           <div class="portfolio-desc">— Alquiler de furgonetas camper —</div>
@@ -742,7 +743,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/littleschool.es_-480x219.webp" alt="Web de Littleschool" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/littleschool.es_-480x219.webp" alt="Web de Littleschool" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Littleschool</div>
           <div class="portfolio-desc">— Academia de Inglés en Almería —</div>
@@ -751,7 +752,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/Factoria-del-glamour-600x274.webp" alt="Web de Factoría del Glamour" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/Factoria-del-glamour-600x274.webp" alt="Web de Factoría del Glamour" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Factoría del Glamour</div>
           <div class="portfolio-desc">— Tienda de ropa de alta costura —</div>
@@ -760,7 +761,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/grupevasion.com_-480x219.webp" alt="Web de Grupevasion" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/grupevasion.com_-480x219.webp" alt="Web de Grupevasion" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Grupevasion</div>
           <div class="portfolio-desc">— Viajes y excursiones escolares —</div>
@@ -769,7 +770,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/piscinasnorpol.com_-480x219.webp" alt="Web de Piscinas Norpol" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/piscinasnorpol.com_-480x219.webp" alt="Web de Piscinas Norpol" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Piscinas Norpol</div>
           <div class="portfolio-desc">— Instalación de piscinas de fibra —</div>
@@ -778,7 +779,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/sevillasistemas.com_-480x219.webp" alt="Web de Sevilla Sistemas" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/sevillasistemas.com_-480x219.webp" alt="Web de Sevilla Sistemas" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Sevilla Sistemas</div>
           <div class="portfolio-desc">— Sistemas de seguridad y teleco —</div>
@@ -787,7 +788,7 @@
       </div>
 
       <div class="portfolio-card">
-        <img class="portfolio-img" src="/images/Tecnocasa-600x274.webp" alt="Web de Tecnocasa" loading="lazy">
+        <div class="portfolio-img-wrap"><img class="portfolio-img" src="/images/Tecnocasa-600x274.webp" alt="Web de Tecnocasa" loading="lazy"></div>
         <div class="portfolio-body">
           <div class="portfolio-name">Tecnocasa</div>
           <div class="portfolio-desc">— Agencia inmobiliaria —</div>
