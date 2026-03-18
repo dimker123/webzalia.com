@@ -1,8 +1,5 @@
 <?php
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: Content-Type');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -10,15 +7,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$to = 'info@webzalia.com';
+require_once __DIR__ . '/smtp-config.php';
+require_once __DIR__ . '/phpmailer/Exception.php';
+require_once __DIR__ . '/phpmailer/PHPMailer.php';
+require_once __DIR__ . '/phpmailer/SMTP.php';
 
-$raw = file_get_contents('php://input');
-$data = json_decode($raw, true);
-if (!$data) {
-    $data = $_POST;
-}
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-// Campos esperados
+// Parse input
+$raw  = file_get_contents('php://input');
+$data = json_decode($raw, true) ?: $_POST;
+
 $nombre   = isset($data['nombre'])   ? strip_tags(trim($data['nombre']))   : '';
 $telefono = isset($data['telefono']) ? strip_tags(trim($data['telefono'])) : '';
 $email    = isset($data['email'])    ? strip_tags(trim($data['email']))    : '';
@@ -27,7 +28,6 @@ $web      = isset($data['web'])      ? strip_tags(trim($data['web']))      : '';
 $mensaje  = isset($data['mensaje'])  ? strip_tags(trim($data['mensaje']))  : '';
 $subject  = isset($data['subject'])  ? strip_tags(trim($data['subject']))  : 'Nuevo formulario - Webzalia';
 
-// Validación básica
 if (empty($nombre) || empty($telefono) || empty($email)) {
     http_response_code(422);
     echo json_encode(['success' => false, 'message' => 'Faltan campos obligatorios']);
@@ -39,29 +39,40 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// Construir cuerpo del email
+// Build email body
 $body  = "Has recibido un nuevo mensaje desde el formulario de Webzalia.\n";
-$body .= "==========================================================\n\n";
+$body .= str_repeat('=', 58) . "\n\n";
 $body .= "Nombre:    $nombre\n";
 $body .= "Teléfono:  $telefono\n";
 $body .= "Email:     $email\n";
 if ($servicio) $body .= "Servicio:  $servicio\n";
 if ($web)      $body .= "Web:       $web\n";
 if ($mensaje)  $body .= "\nMensaje:\n$mensaje\n";
-$body .= "\n==========================================================\n";
-$body .= "Enviado desde: " . ($_SERVER['HTTP_REFERER'] ?? 'desconocido') . "\n";
+$body .= "\n" . str_repeat('=', 58) . "\n";
 $body .= "Fecha: " . date('d/m/Y H:i') . "\n";
 
-$headers  = "From: noreply@webzalia.com\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+// Send via SMTP
+$mail = new PHPMailer(true);
+try {
+    $mail->isSMTP();
+    $mail->Host       = SMTP_HOST;
+    $mail->SMTPAuth   = true;
+    $mail->Username   = SMTP_USER;
+    $mail->Password   = SMTP_PASS;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = SMTP_PORT;
+    $mail->CharSet    = 'UTF-8';
 
-$sent = mail($to, $subject, $body, $headers);
+    $mail->setFrom(SMTP_FROM, SMTP_FROM_NAME);
+    $mail->addAddress(MAIL_TO);
+    $mail->addReplyTo($email, $nombre);
 
-if ($sent) {
+    $mail->Subject = $subject;
+    $mail->Body    = $body;
+
+    $mail->send();
     echo json_encode(['success' => true, 'message' => '¡Mensaje enviado correctamente!']);
-} else {
+} catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.']);
+    echo json_encode(['success' => false, 'message' => 'Error al enviar. Inténtalo de nuevo.']);
 }
