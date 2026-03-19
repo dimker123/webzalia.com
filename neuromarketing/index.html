@@ -226,6 +226,52 @@
     .cta-btns .btn-primary,.cta-btns .btn-secondary{justify-content:center;}
   }
 
+  /* NEURO PROBLEMA GRID */
+  .neuro-problema-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+
+  /* MÉTODO NEOLEADS */
+  .metodo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .metodo-step{background:var(--gris);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px 28px;transition:border-color var(--t),transform var(--t);}
+  .metodo-step:hover{border-color:rgba(200,241,53,0.25);transform:translateY(-4px);}
+  .metodo-num{width:52px;height:52px;background:linear-gradient(135deg,#c8f135,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#0a0a0a;margin-bottom:16px;}
+  .metodo-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--acento);background:rgba(200,241,53,0.1);border:1px solid rgba(200,241,53,0.25);padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+
+  /* SECTORES */
+  .sectores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .sector-card{background:var(--gris);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px 22px;text-align:center;transition:border-color var(--t),transform var(--t);}
+  .sector-card:hover{border-color:rgba(200,241,53,0.3);transform:translateY(-4px);}
+  .sector-icon{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 16px;}
+  .sector-title{font-weight:700;font-size:15px;color:var(--blanco);margin-bottom:8px;}
+  .sector-desc{font-size:13px;color:rgba(245,244,240,0.6);line-height:1.6;}
+
+  /* PLAN NEO150 */
+  .plan-card{max-width:820px;margin:40px auto 0;background:var(--gris);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:40px;position:relative;overflow:hidden;}
+  .plan-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--acento),#7c3aed);}
+  .plan-layout{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+  .plan-badge{position:absolute;top:20px;right:20px;background:#ef4444;color:#fff;font-size:10px;font-weight:700;padding:4px 12px;border-radius:100px;text-transform:uppercase;letter-spacing:0.1em;}
+  .plan-name{font-size:13px;font-weight:700;color:var(--gris3);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:10px;}
+  .plan-price{font-size:clamp(52px,7vw,76px);font-weight:800;color:var(--blanco);line-height:1;letter-spacing:-3px;margin-bottom:6px;}
+  .plan-price span{font-size:20px;font-weight:400;color:var(--gris3);letter-spacing:0;}
+  .plan-note{font-size:13px;color:var(--gris3);margin-bottom:20px;}
+  .plan-gratis{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.35);color:#4ade80;font-size:13px;font-weight:700;padding:10px 18px;border-radius:8px;margin-top:4px;}
+  .plan-features{list-style:none;margin:0 0 24px;padding:0;}
+  .plan-features li{font-size:14px;color:rgba(245,244,240,0.78);padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .plan-features li::before{display:none;}
+  .plan-features li::after{content:"✓";color:var(--acento);font-weight:800;flex-shrink:0;font-size:15px;}
+  .plan-free{background:rgba(200,241,53,0.12);color:var(--acento);font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;border:1px solid rgba(200,241,53,0.25);flex-shrink:0;}
+  .plan-guarantee{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px 18px;margin-top:24px;font-size:13px;color:rgba(245,244,240,0.65);line-height:1.5;}
+
+  @media(max-width:900px){
+    .neuro-problema-grid{grid-template-columns:1fr 1fr;}
+    .metodo-grid{grid-template-columns:1fr;}
+    .sectores-grid{grid-template-columns:1fr 1fr;}
+    .plan-layout{grid-template-columns:1fr;}
+  }
+  @media(max-width:560px){
+    .neuro-problema-grid{grid-template-columns:1fr;}
+    .sectores-grid{grid-template-columns:1fr;}
+  }
+
   /* DROPDOWN SERVICIOS */
   .nav-dropdown {
     position: relative;
@@ -481,22 +527,22 @@
     <p class="section-lead">Tenemos experiencia demostrada en estos mercados. Conocemos sus keywords, su competencia y qué convierte en cada sector.</p>
     <div class="sectores-grid">
       <div class="sector-card">
-        <div class="sector-icon">🔨</div>
+        <div class="sector-icon" style="background:rgba(249,115,22,0.15);border:1px solid rgba(249,115,22,0.35);">🔨</div>
         <div class="sector-title">Reformas y Hogar</div>
         <div class="sector-desc">Reformas integrales, cocinas, baños, pintores, carpinteros y todos los oficios del hogar.</div>
       </div>
       <div class="sector-card">
-        <div class="sector-icon">🏥</div>
+        <div class="sector-icon" style="background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.35);">🏥</div>
         <div class="sector-title">Salud y Bienestar</div>
         <div class="sector-desc">Clínicas dentales, fisioterapia, estética, nutrición, psicología y centros médicos.</div>
       </div>
       <div class="sector-card">
-        <div class="sector-icon">⚡</div>
+        <div class="sector-icon" style="background:rgba(6,182,212,0.15);border:1px solid rgba(6,182,212,0.35);">⚡</div>
         <div class="sector-title">Instaladores Técnicos</div>
         <div class="sector-desc">Aire acondicionado, placas solares, fontanería, electricistas y certificaciones de gas.</div>
       </div>
       <div class="sector-card">
-        <div class="sector-icon">💼</div>
+        <div class="sector-icon" style="background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.35);">💼</div>
         <div class="sector-title">Servicios Profesionales</div>
         <div class="sector-desc">Abogados, gestorías, arquitectos, consultores, ingenieros y asesores financieros.</div>
       </div>
@@ -511,25 +557,29 @@
     <h2>Plan Neo150</h2>
     <p class="section-lead" style="max-width:600px;margin:0 auto 0;">Todo lo que necesitas para dominar tu mercado local. Sin permanencia, sin sorpresas.</p>
     <div class="plan-card">
-      <div class="plan-badge">Más popular</div>
-      <div class="plan-name">Plan Neo150</div>
-      <div class="plan-price">150€ <span>/mes</span></div>
-      <div class="plan-note">+ Inversión en Google Ads (gestionada por ti, recomendamos desde 300€/mes)</div>
-      <ul class="plan-features">
-        <li><span>Diseño Web Premium Futurista</span><span class="plan-free">GRATIS</span></li>
-        <li><span>Hosting de Alta Velocidad</span><span class="plan-free">GRATIS</span></li>
-        <li><span>Dominio .es o .com</span><span class="plan-free">GRATIS</span></li>
-        <li>Gestión completa de campañas Google Ads</li>
-        <li>Optimización mensual de conversión</li>
-        <li>Leads directos a tu WhatsApp</li>
-        <li>Soporte prioritario por WhatsApp</li>
-        <li>Informes mensuales de resultados</li>
-        <li>Sin permanencia — eres libre</li>
-      </ul>
-      <a href="tel:+34624129910" class="btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3a1 1 0 011-1h2.5a1 1 0 011 .894l.5 3a1 1 0 01-.27.919l-1 .97a8 8 0 003.486 3.486l.97-1a1 1 0 01.92-.27l3 .5a1 1 0 01.894 1V13a1 1 0 01-1 1C6.373 14 2 9.627 2 4a1 1 0 010-.04V3z" stroke="currentColor" stroke-width="1.3"/></svg>
-        Quiero este plan
-      </a>
+      <div class="plan-badge">Oferta limitada</div>
+      <div class="plan-layout">
+        <div class="plan-left">
+          <div class="plan-name">Plan Neo150</div>
+          <div class="plan-price">150€ <span>/mes</span></div>
+          <div class="plan-note">+ Inversión en Google Ads (gestionada por ti, recomendamos desde 300€/mes)</div>
+          <div class="plan-gratis">Diseño &amp; Desarrollo &nbsp;<strong>0€ (GRATIS)</strong></div>
+        </div>
+        <div class="plan-right">
+          <ul class="plan-features">
+            <li>Diseño Web Premium Futurista</li>
+            <li>Hosting de Alta Velocidad incluido</li>
+            <li>Dominio .es o .com incluido</li>
+            <li>Gestión Campañas Google Ads</li>
+            <li>Optimización Manual de Conversión</li>
+            <li>Soporte Prioritario WhatsApp</li>
+            <li>Sin Permanencia (Eres libre)</li>
+          </ul>
+          <a href="tel:+34624129910" class="btn-primary" style="width:100%;justify-content:center;font-size:15px;padding:16px;text-transform:uppercase;letter-spacing:0.05em;">
+            Quiero este plan
+          </a>
+        </div>
+      </div>
       <div class="plan-guarantee">
         <span style="font-size:20px;">🛡️</span>
         <span><strong>Resultados garantizados</strong> o devolvemos el dinero. Solo aceptamos 3 clientes por sector y ciudad.</span>
